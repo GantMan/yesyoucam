@@ -1,3 +1,5 @@
+# Yes You Cam
+## A Simple BluePotion Camera Library to help you acheive your dreams...
 # yesyoucam
 
 TODO: Write a gem description

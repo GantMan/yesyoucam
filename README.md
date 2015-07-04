@@ -1,2 +1,2 @@
-# yesyoucam
-BluePotion Camera Library
+# Yes You Cam
+## A Simple BluePotion Camera Library to help you acheive your dreams...

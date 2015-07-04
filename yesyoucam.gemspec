@@ -1,15 +1,16 @@
 # -*- encoding: utf-8 -*-
-VERSION = "1.0"
+VERSION = "0.1"
 
 Gem::Specification.new do |spec|
   spec.name          = "yesyoucam"
   spec.version       = VERSION
   spec.authors       = ["Gant"]
   spec.email         = ["GantMan@gmail.com"]
-  spec.description   = %q{TODO: Write a gem description}
-  spec.summary       = %q{TODO: Write a gem summary}
-  spec.homepage      = ""
-  spec.license       = ""
+  spec.description   = %q{Quickly and easily implment camera functions in RubyMotion Android}
+  spec.summary       = %q{Quickly and easily use the Android camera functions in RubyMotion for Android.}
+  spec.homepage      = "https://github.com/GantMan/yesyoucam"
+  spec.license       = "MIT"
+  spec.post_install_message = "JUST DO IT!!!! MAKE YOUR DREAMS COME TRUE!"
 
   files = []
   files << 'README.md'

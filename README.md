@@ -1,5 +1,5 @@
 # Yes You Cam
-## A **Ridiculous**ly Simple BluePotion Camera Library to help you acheive your dreams...
+## A **Ridiculous**ly Simple BluePotion Camera Library to help you achieve your dreams...
 ![Don't Shia Way](_art/yyc.png)
 
 ## Installation

@@ -1,5 +1,5 @@
 # -*- encoding: utf-8 -*-
-VERSION = "0.1"
+VERSION = "0.2"
 
 Gem::Specification.new do |spec|
   spec.name          = "yesyoucam"
@@ -21,4 +21,5 @@ Gem::Specification.new do |spec|
   spec.require_paths = ["lib"]
 
   spec.add_development_dependency "rake"
+  spec.add_runtime_dependency 'bluepotion'
 end

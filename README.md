@@ -11,7 +11,7 @@
   YesYouCam.capture_photo
 ```
 
-### React on Completion
+### React on Take a Photo Completion
 ```ruby
   # called in BluePotion when the photo has been taken (or any activity is completed actually)
   # If you're not using a PMActivity you should capture the onActivityResult method.

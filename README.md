@@ -2,7 +2,7 @@
 ## A **Ridiculous**ly Simple BluePotion Camera Library to help you achieve your dreams...
 ![Don't Shia Way](_art/yyc.png)
 
-## Usage
+## Usage ("Nothing is impossible")
 
 ### Take a Photo
 

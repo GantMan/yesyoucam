@@ -1,0 +1,1787 @@
+<?xml version='1.0'?>
+<signatures version='1.0'>
+<class name="com/fasterxml/jackson/core/base/GeneratorBase" super="com/fasterxml/jackson/core/JsonGenerator">
+<method name="&lt;init&gt;" type="(ILcom/fasterxml/jackson/core/ObjectCodec;)V"/>
+<method name="&lt;init&gt;" type="(ILcom/fasterxml/jackson/core/ObjectCodec;Lcom/fasterxml/jackson/core/json/JsonWriteContext;)V"/>
+<method name="version" type="()Lcom/fasterxml/jackson/core/Version;"/>
+<method name="getCurrentValue" type="()Ljava/lang/Object;"/>
+<method name="setCurrentValue" type="(Ljava/lang/Object;)V"/>
+<method name="isEnabled" type="(Lcom/fasterxml/jackson/core/JsonGenerator$Feature;)Z"/>
+<method name="getFeatureMask" type="()I"/>
+<method name="enable" type="(Lcom/fasterxml/jackson/core/JsonGenerator$Feature;)Lcom/fasterxml/jackson/core/JsonGenerator;"/>
+<method name="disable" type="(Lcom/fasterxml/jackson/core/JsonGenerator$Feature;)Lcom/fasterxml/jackson/core/JsonGenerator;"/>
+<method name="setFeatureMask" type="(I)Lcom/fasterxml/jackson/core/JsonGenerator;"/>
+<method name="useDefaultPrettyPrinter" type="()Lcom/fasterxml/jackson/core/JsonGenerator;"/>
+<method name="setCodec" type="(Lcom/fasterxml/jackson/core/ObjectCodec;)Lcom/fasterxml/jackson/core/JsonGenerator;"/>
+<method name="getCodec" type="()Lcom/fasterxml/jackson/core/ObjectCodec;"/>
+<method name="getOutputContext" type="()Lcom/fasterxml/jackson/core/json/JsonWriteContext;"/>
+<method name="writeFieldName" type="(Lcom/fasterxml/jackson/core/SerializableString;)V"/>
+<method name="writeString" type="(Lcom/fasterxml/jackson/core/SerializableString;)V"/>
+<method name="writeRawValue" type="(Ljava/lang/String;)V"/>
+<method name="writeRawValue" type="(Ljava/lang/String;II)V"/>
+<method name="writeRawValue" type="([CII)V"/>
+<method name="writeRawValue" type="(Lcom/fasterxml/jackson/core/SerializableString;)V"/>
+<method name="writeBinary" type="(Lcom/fasterxml/jackson/core/Base64Variant;Ljava/io/InputStream;I)I"/>
+<method name="writeObject" type="(Ljava/lang/Object;)V"/>
+<method name="writeTree" type="(Lcom/fasterxml/jackson/core/TreeNode;)V"/>
+<method name="flush" type="()V"/>
+<method name="close" type="()V"/>
+<method name="isClosed" type="()Z"/>
+<method name="_releaseBuffers" type="()V"/>
+<method name="_verifyValueWrite" type="(Ljava/lang/String;)V"/>
+<method name="_constructDefaultPrettyPrinter" type="()Lcom/fasterxml/jackson/core/PrettyPrinter;"/>
+<method name="_decodeSurrogate" type="(II)I"/>
+<method name="getOutputContext" type="()Lcom/fasterxml/jackson/core/JsonStreamContext;"/>
+</class>
+<class name="com/fasterxml/jackson/core/base/ParserBase" super="com/fasterxml/jackson/core/base/ParserMinimalBase">
+<method name="&lt;init&gt;" type="(Lcom/fasterxml/jackson/core/io/IOContext;I)V"/>
+<method name="version" type="()Lcom/fasterxml/jackson/core/Version;"/>
+<method name="getCurrentValue" type="()Ljava/lang/Object;"/>
+<method name="setCurrentValue" type="(Ljava/lang/Object;)V"/>
+<method name="enable" type="(Lcom/fasterxml/jackson/core/JsonParser$Feature;)Lcom/fasterxml/jackson/core/JsonParser;"/>
+<method name="disable" type="(Lcom/fasterxml/jackson/core/JsonParser$Feature;)Lcom/fasterxml/jackson/core/JsonParser;"/>
+<method name="setFeatureMask" type="(I)Lcom/fasterxml/jackson/core/JsonParser;"/>
+<method name="getCurrentName" type="()Ljava/lang/String;"/>
+<method name="overrideCurrentName" type="(Ljava/lang/String;)V"/>
+<method name="close" type="()V"/>
+<method name="isClosed" type="()Z"/>
+<method name="getParsingContext" type="()Lcom/fasterxml/jackson/core/json/JsonReadContext;"/>
+<method name="getTokenLocation" type="()Lcom/fasterxml/jackson/core/JsonLocation;"/>
+<method name="getCurrentLocation" type="()Lcom/fasterxml/jackson/core/JsonLocation;"/>
+<method name="hasTextCharacters" type="()Z"/>
+<method name="getEmbeddedObject" type="()Ljava/lang/Object;"/>
+<method name="getTokenCharacterOffset" type="()J"/>
+<method name="getTokenLineNr" type="()I"/>
+<method name="getTokenColumnNr" type="()I"/>
+<method name="loadMoreGuaranteed" type="()V"/>
+<method name="loadMore" type="()Z"/>
+<method name="_finishString" type="()V"/>
+<method name="_closeInput" type="()V"/>
+<method name="_releaseBuffers" type="()V"/>
+<method name="_handleEOF" type="()V"/>
+<method name="_eofAsNextChar" type="()I"/>
+<method name="_reportMismatchedEndMarker" type="(IC)V"/>
+<method name="_getByteArrayBuilder" type="()Lcom/fasterxml/jackson/core/util/ByteArrayBuilder;"/>
+<method name="reset" type="(ZIII)Lcom/fasterxml/jackson/core/JsonToken;"/>
+<method name="resetInt" type="(ZI)Lcom/fasterxml/jackson/core/JsonToken;"/>
+<method name="resetFloat" type="(ZIII)Lcom/fasterxml/jackson/core/JsonToken;"/>
+<method name="resetAsNaN" type="(Ljava/lang/String;D)Lcom/fasterxml/jackson/core/JsonToken;"/>
+<method name="getNumberValue" type="()Ljava/lang/Number;"/>
+<method name="getNumberType" type="()Lcom/fasterxml/jackson/core/JsonParser$NumberType;"/>
+<method name="getIntValue" type="()I"/>
+<method name="getLongValue" type="()J"/>
+<method name="getBigIntegerValue" type="()Ljava/math/BigInteger;"/>
+<method name="getFloatValue" type="()F"/>
+<method name="getDoubleValue" type="()D"/>
+<method name="getDecimalValue" type="()Ljava/math/BigDecimal;"/>
+<method name="_parseNumericValue" type="(I)V"/>
+<method name="_parseIntValue" type="()I"/>
+<method name="convertNumberToInt" type="()V"/>
+<method name="convertNumberToLong" type="()V"/>
+<method name="convertNumberToBigInteger" type="()V"/>
+<method name="convertNumberToDouble" type="()V"/>
+<method name="convertNumberToBigDecimal" type="()V"/>
+<method name="reportUnexpectedNumberChar" type="(ILjava/lang/String;)V"/>
+<method name="reportInvalidNumber" type="(Ljava/lang/String;)V"/>
+<method name="reportOverflowInt" type="()V"/>
+<method name="reportOverflowLong" type="()V"/>
+<method name="_decodeEscaped" type="()C"/>
+<method name="_decodeBase64Escape" type="(Lcom/fasterxml/jackson/core/Base64Variant;II)I"/>
+<method name="_decodeBase64Escape" type="(Lcom/fasterxml/jackson/core/Base64Variant;CI)I"/>
+<method name="reportInvalidBase64Char" type="(Lcom/fasterxml/jackson/core/Base64Variant;II)Ljava/lang/IllegalArgumentException;"/>
+<method name="reportInvalidBase64Char" type="(Lcom/fasterxml/jackson/core/Base64Variant;IILjava/lang/String;)Ljava/lang/IllegalArgumentException;"/>
+<method name="getParsingContext" type="()Lcom/fasterxml/jackson/core/JsonStreamContext;"/>
+</class>
+<class name="com/fasterxml/jackson/core/base/ParserMinimalBase" super="com/fasterxml/jackson/core/JsonParser">
+<method name="&lt;init&gt;" type="()V"/>
+<method name="&lt;init&gt;" type="(I)V"/>
+<method name="nextToken" type="()Lcom/fasterxml/jackson/core/JsonToken;"/>
+<method name="getCurrentToken" type="()Lcom/fasterxml/jackson/core/JsonToken;"/>
+<method name="getCurrentTokenId" type="()I"/>
+<method name="hasCurrentToken" type="()Z"/>
+<method name="hasTokenId" type="(I)Z"/>
+<method name="hasToken" type="(Lcom/fasterxml/jackson/core/JsonToken;)Z"/>
+<method name="isExpectedStartArrayToken" type="()Z"/>
+<method name="isExpectedStartObjectToken" type="()Z"/>
+<method name="nextValue" type="()Lcom/fasterxml/jackson/core/JsonToken;"/>
+<method name="skipChildren" type="()Lcom/fasterxml/jackson/core/JsonParser;"/>
+<method name="_handleEOF" type="()V"/>
+<method name="getCurrentName" type="()Ljava/lang/String;"/>
+<method name="close" type="()V"/>
+<method name="isClosed" type="()Z"/>
+<method name="getParsingContext" type="()Lcom/fasterxml/jackson/core/JsonStreamContext;"/>
+<method name="clearCurrentToken" type="()V"/>
+<method name="getLastClearedToken" type="()Lcom/fasterxml/jackson/core/JsonToken;"/>
+<method name="overrideCurrentName" type="(Ljava/lang/String;)V"/>
+<method name="getText" type="()Ljava/lang/String;"/>
+<method name="getTextCharacters" type="()[C"/>
+<method name="hasTextCharacters" type="()Z"/>
+<method name="getTextLength" type="()I"/>
+<method name="getTextOffset" type="()I"/>
+<method name="getBinaryValue" type="(Lcom/fasterxml/jackson/core/Base64Variant;)[B"/>
+<method name="getValueAsBoolean" type="(Z)Z"/>
+<method name="getValueAsInt" type="()I"/>
+<method name="getValueAsInt" type="(I)I"/>
+<method name="getValueAsLong" type="()J"/>
+<method name="getValueAsLong" type="(J)J"/>
+<method name="getValueAsDouble" type="(D)D"/>
+<method name="getValueAsString" type="()Ljava/lang/String;"/>
+<method name="getValueAsString" type="(Ljava/lang/String;)Ljava/lang/String;"/>
+<method name="_decodeBase64" type="(Ljava/lang/String;Lcom/fasterxml/jackson/core/util/ByteArrayBuilder;Lcom/fasterxml/jackson/core/Base64Variant;)V"/>
+<method name="_hasTextualNull" type="(Ljava/lang/String;)Z"/>
+<method name="_reportUnexpectedChar" type="(ILjava/lang/String;)V"/>
+<method name="_reportInvalidEOF" type="()V"/>
+<method name="_reportInvalidEOF" type="(Ljava/lang/String;)V"/>
+<method name="_reportInvalidEOFInValue" type="()V"/>
+<method name="_reportMissingRootWS" type="(I)V"/>
+<method name="_throwInvalidSpace" type="(I)V"/>
+<method name="_throwUnquotedSpace" type="(ILjava/lang/String;)V"/>
+<method name="_handleUnrecognizedCharacterEscape" type="(C)C"/>
+<method name="_getCharDesc" type="(I)Ljava/lang/String;" class_method="true"/>
+<method name="_reportError" type="(Ljava/lang/String;)V"/>
+<method name="_wrapError" type="(Ljava/lang/String;Ljava/lang/Throwable;)V"/>
+<method name="_throwInternal" type="()V"/>
+<method name="_constructError" type="(Ljava/lang/String;Ljava/lang/Throwable;)Lcom/fasterxml/jackson/core/JsonParseException;"/>
+<method name="_asciiBytes" type="(Ljava/lang/String;)[B" class_method="true"/>
+<method name="_ascii" type="([B)Ljava/lang/String;" class_method="true"/>
+</class>
+<class name="com/fasterxml/jackson/core/Base64Variants" super="java/lang/Object">
+<method name="&lt;init&gt;" type="()V"/>
+<method name="getDefaultVariant" type="()Lcom/fasterxml/jackson/core/Base64Variant;" class_method="true"/>
+<method name="valueOf" type="(Ljava/lang/String;)Lcom/fasterxml/jackson/core/Base64Variant;" class_method="true"/>
+</class>
+<class name="com/fasterxml/jackson/core/filter/FilteringGeneratorDelegate" super="com/fasterxml/jackson/core/util/JsonGeneratorDelegate">
+<method name="&lt;init&gt;" type="(Lcom/fasterxml/jackson/core/JsonGenerator;Lcom/fasterxml/jackson/core/filter/TokenFilter;ZZ)V"/>
+<method name="getFilter" type="()Lcom/fasterxml/jackson/core/filter/TokenFilter;"/>
+<method name="getFilterContext" type="()Lcom/fasterxml/jackson/core/JsonStreamContext;"/>
+<method name="getMatchCount" type="()I"/>
+<method name="getOutputContext" type="()Lcom/fasterxml/jackson/core/JsonStreamContext;"/>
+<method name="writeStartArray" type="()V"/>
+<method name="writeStartArray" type="(I)V"/>
+<method name="writeEndArray" type="()V"/>
+<method name="writeStartObject" type="()V"/>
+<method name="writeEndObject" type="()V"/>
+<method name="writeFieldName" type="(Ljava/lang/String;)V"/>
+<method name="writeFieldName" type="(Lcom/fasterxml/jackson/core/SerializableString;)V"/>
+<method name="writeString" type="(Ljava/lang/String;)V"/>
+<method name="writeString" type="([CII)V"/>
+<method name="writeString" type="(Lcom/fasterxml/jackson/core/SerializableString;)V"/>
+<method name="writeRawUTF8String" type="([BII)V"/>
+<method name="writeUTF8String" type="([BII)V"/>
+<method name="writeRaw" type="(Ljava/lang/String;)V"/>
+<method name="writeRaw" type="(Ljava/lang/String;II)V"/>
+<method name="writeRaw" type="(Lcom/fasterxml/jackson/core/SerializableString;)V"/>
+<method name="writeRaw" type="([CII)V"/>
+<method name="writeRaw" type="(C)V"/>
+<method name="writeRawValue" type="(Ljava/lang/String;)V"/>
+<method name="writeRawValue" type="(Ljava/lang/String;II)V"/>
+<method name="writeRawValue" type="([CII)V"/>
+<method name="writeBinary" type="(Lcom/fasterxml/jackson/core/Base64Variant;[BII)V"/>
+<method name="writeBinary" type="(Lcom/fasterxml/jackson/core/Base64Variant;Ljava/io/InputStream;I)I"/>
+<method name="writeNumber" type="(S)V"/>
+<method name="writeNumber" type="(I)V"/>
+<method name="writeNumber" type="(J)V"/>
+<method name="writeNumber" type="(Ljava/math/BigInteger;)V"/>
+<method name="writeNumber" type="(D)V"/>
+<method name="writeNumber" type="(F)V"/>
+<method name="writeNumber" type="(Ljava/math/BigDecimal;)V"/>
+<method name="writeNumber" type="(Ljava/lang/String;)V"/>
+<method name="writeBoolean" type="(Z)V"/>
+<method name="writeNull" type="()V"/>
+<method name="writeOmittedField" type="(Ljava/lang/String;)V"/>
+<method name="writeObjectId" type="(Ljava/lang/Object;)V"/>
+<method name="writeObjectRef" type="(Ljava/lang/Object;)V"/>
+<method name="writeTypeId" type="(Ljava/lang/Object;)V"/>
+<method name="_checkParentPath" type="()V"/>
+<method name="_checkPropertyParentPath" type="()V"/>
+<method name="_checkBinaryWrite" type="()Z"/>
+<method name="_checkRawValueWrite" type="()Z"/>
+</class>
+<class name="com/fasterxml/jackson/core/filter/FilteringParserDelegate" super="com/fasterxml/jackson/core/util/JsonParserDelegate">
+<method name="&lt;init&gt;" type="(Lcom/fasterxml/jackson/core/JsonParser;Lcom/fasterxml/jackson/core/filter/TokenFilter;ZZ)V"/>
+<method name="getFilter" type="()Lcom/fasterxml/jackson/core/filter/TokenFilter;"/>
+<method name="getMatchCount" type="()I"/>
+<method name="getCurrentToken" type="()Lcom/fasterxml/jackson/core/JsonToken;"/>
+<method name="getCurrentTokenId" type="()I"/>
+<method name="hasCurrentToken" type="()Z"/>
+<method name="hasTokenId" type="(I)Z"/>
+<method name="hasToken" type="(Lcom/fasterxml/jackson/core/JsonToken;)Z"/>
+<method name="isExpectedStartArrayToken" type="()Z"/>
+<method name="isExpectedStartObjectToken" type="()Z"/>
+<method name="getCurrentLocation" type="()Lcom/fasterxml/jackson/core/JsonLocation;"/>
+<method name="getParsingContext" type="()Lcom/fasterxml/jackson/core/JsonStreamContext;"/>
+<method name="getCurrentName" type="()Ljava/lang/String;"/>
+<method name="clearCurrentToken" type="()V"/>
+<method name="getLastClearedToken" type="()Lcom/fasterxml/jackson/core/JsonToken;"/>
+<method name="overrideCurrentName" type="(Ljava/lang/String;)V"/>
+<method name="nextToken" type="()Lcom/fasterxml/jackson/core/JsonToken;"/>
+<method name="_nextToken2" type="()Lcom/fasterxml/jackson/core/JsonToken;"/>
+<method name="_nextTokenWithBuffering" type="(Lcom/fasterxml/jackson/core/filter/TokenFilterContext;)Lcom/fasterxml/jackson/core/JsonToken;"/>
+<method name="nextValue" type="()Lcom/fasterxml/jackson/core/JsonToken;"/>
+<method name="skipChildren" type="()Lcom/fasterxml/jackson/core/JsonParser;"/>
+<method name="getText" type="()Ljava/lang/String;"/>
+<method name="hasTextCharacters" type="()Z"/>
+<method name="getTextCharacters" type="()[C"/>
+<method name="getTextLength" type="()I"/>
+<method name="getTextOffset" type="()I"/>
+<method name="getBigIntegerValue" type="()Ljava/math/BigInteger;"/>
+<method name="getBooleanValue" type="()Z"/>
+<method name="getByteValue" type="()B"/>
+<method name="getShortValue" type="()S"/>
+<method name="getDecimalValue" type="()Ljava/math/BigDecimal;"/>
+<method name="getDoubleValue" type="()D"/>
+<method name="getFloatValue" type="()F"/>
+<method name="getIntValue" type="()I"/>
+<method name="getLongValue" type="()J"/>
+<method name="getNumberType" type="()Lcom/fasterxml/jackson/core/JsonParser$NumberType;"/>
+<method name="getNumberValue" type="()Ljava/lang/Number;"/>
+<method name="getValueAsInt" type="()I"/>
+<method name="getValueAsInt" type="(I)I"/>
+<method name="getValueAsLong" type="()J"/>
+<method name="getValueAsLong" type="(J)J"/>
+<method name="getValueAsDouble" type="()D"/>
+<method name="getValueAsDouble" type="(D)D"/>
+<method name="getValueAsBoolean" type="()Z"/>
+<method name="getValueAsBoolean" type="(Z)Z"/>
+<method name="getValueAsString" type="()Ljava/lang/String;"/>
+<method name="getValueAsString" type="(Ljava/lang/String;)Ljava/lang/String;"/>
+<method name="getEmbeddedObject" type="()Ljava/lang/Object;"/>
+<method name="getBinaryValue" type="(Lcom/fasterxml/jackson/core/Base64Variant;)[B"/>
+<method name="readBinaryValue" type="(Lcom/fasterxml/jackson/core/Base64Variant;Ljava/io/OutputStream;)I"/>
+<method name="getTokenLocation" type="()Lcom/fasterxml/jackson/core/JsonLocation;"/>
+<method name="_filterContext" type="()Lcom/fasterxml/jackson/core/JsonStreamContext;"/>
+</class>
+<class name="com/fasterxml/jackson/core/filter/JsonPointerBasedFilter" super="com/fasterxml/jackson/core/filter/TokenFilter">
+<method name="&lt;init&gt;" type="(Ljava/lang/String;)V"/>
+<method name="&lt;init&gt;" type="(Lcom/fasterxml/jackson/core/JsonPointer;)V"/>
+<method name="includeElement" type="(I)Lcom/fasterxml/jackson/core/filter/TokenFilter;"/>
+<method name="includeProperty" type="(Ljava/lang/String;)Lcom/fasterxml/jackson/core/filter/TokenFilter;"/>
+<method name="filterStartArray" type="()Lcom/fasterxml/jackson/core/filter/TokenFilter;"/>
+<method name="filterStartObject" type="()Lcom/fasterxml/jackson/core/filter/TokenFilter;"/>
+<method name="_includeScalar" type="()Z"/>
+<method name="toString" type="()Ljava/lang/String;"/>
+</class>
+<class name="com/fasterxml/jackson/core/filter/TokenFilter" super="java/lang/Object">
+<method name="&lt;init&gt;" type="()V"/>
+<method name="filterStartObject" type="()Lcom/fasterxml/jackson/core/filter/TokenFilter;"/>
+<method name="filterStartArray" type="()Lcom/fasterxml/jackson/core/filter/TokenFilter;"/>
+<method name="filterFinishObject" type="()V"/>
+<method name="filterFinishArray" type="()V"/>
+<method name="includeProperty" type="(Ljava/lang/String;)Lcom/fasterxml/jackson/core/filter/TokenFilter;"/>
+<method name="includeElement" type="(I)Lcom/fasterxml/jackson/core/filter/TokenFilter;"/>
+<method name="includeRootValue" type="(I)Lcom/fasterxml/jackson/core/filter/TokenFilter;"/>
+<method name="includeValue" type="(Lcom/fasterxml/jackson/core/JsonParser;)Z"/>
+<method name="includeBoolean" type="(Z)Z"/>
+<method name="includeNull" type="()Z"/>
+<method name="includeString" type="(Ljava/lang/String;)Z"/>
+<method name="includeNumber" type="(I)Z"/>
+<method name="includeNumber" type="(J)Z"/>
+<method name="includeNumber" type="(F)Z"/>
+<method name="includeNumber" type="(D)Z"/>
+<method name="includeNumber" type="(Ljava/math/BigDecimal;)Z"/>
+<method name="includeNumber" type="(Ljava/math/BigInteger;)Z"/>
+<method name="includeBinary" type="()Z"/>
+<method name="includeRawValue" type="()Z"/>
+<method name="includeEmbeddedValue" type="(Ljava/lang/Object;)Z"/>
+<method name="toString" type="()Ljava/lang/String;"/>
+<method name="_includeScalar" type="()Z"/>
+</class>
+<class name="com/fasterxml/jackson/core/filter/TokenFilterContext" super="com/fasterxml/jackson/core/JsonStreamContext">
+<method name="&lt;init&gt;" type="(ILcom/fasterxml/jackson/core/filter/TokenFilterContext;Lcom/fasterxml/jackson/core/filter/TokenFilter;Z)V"/>
+<method name="reset" type="(ILcom/fasterxml/jackson/core/filter/TokenFilter;Z)Lcom/fasterxml/jackson/core/filter/TokenFilterContext;"/>
+<method name="createRootContext" type="(Lcom/fasterxml/jackson/core/filter/TokenFilter;)Lcom/fasterxml/jackson/core/filter/TokenFilterContext;" class_method="true"/>
+<method name="createChildArrayContext" type="(Lcom/fasterxml/jackson/core/filter/TokenFilter;Z)Lcom/fasterxml/jackson/core/filter/TokenFilterContext;"/>
+<method name="createChildObjectContext" type="(Lcom/fasterxml/jackson/core/filter/TokenFilter;Z)Lcom/fasterxml/jackson/core/filter/TokenFilterContext;"/>
+<method name="setFieldName" type="(Ljava/lang/String;)Lcom/fasterxml/jackson/core/filter/TokenFilter;"/>
+<method name="checkValue" type="(Lcom/fasterxml/jackson/core/filter/TokenFilter;)Lcom/fasterxml/jackson/core/filter/TokenFilter;"/>
+<method name="writePath" type="(Lcom/fasterxml/jackson/core/JsonGenerator;)V"/>
+<method name="writeImmediatePath" type="(Lcom/fasterxml/jackson/core/JsonGenerator;)V"/>
+<method name="closeArray" type="(Lcom/fasterxml/jackson/core/JsonGenerator;)Lcom/fasterxml/jackson/core/filter/TokenFilterContext;"/>
+<method name="closeObject" type="(Lcom/fasterxml/jackson/core/JsonGenerator;)Lcom/fasterxml/jackson/core/filter/TokenFilterContext;"/>
+<method name="skipParentChecks" type="()V"/>
+<method name="getCurrentValue" type="()Ljava/lang/Object;"/>
+<method name="setCurrentValue" type="(Ljava/lang/Object;)V"/>
+<method name="getParent" type="()Lcom/fasterxml/jackson/core/filter/TokenFilterContext;"/>
+<method name="getCurrentName" type="()Ljava/lang/String;"/>
+<method name="getFilter" type="()Lcom/fasterxml/jackson/core/filter/TokenFilter;"/>
+<method name="isStartHandled" type="()Z"/>
+<method name="nextTokenToRead" type="()Lcom/fasterxml/jackson/core/JsonToken;"/>
+<method name="findChildOf" type="(Lcom/fasterxml/jackson/core/filter/TokenFilterContext;)Lcom/fasterxml/jackson/core/filter/TokenFilterContext;"/>
+<method name="appendDesc" type="(Ljava/lang/StringBuilder;)V"/>
+<method name="toString" type="()Ljava/lang/String;"/>
+<method name="getParent" type="()Lcom/fasterxml/jackson/core/JsonStreamContext;"/>
+</class>
+<class name="com/fasterxml/jackson/core/format/DataFormatDetector" super="java/lang/Object">
+<method name="&lt;init&gt;" type="([Lcom/fasterxml/jackson/core/JsonFactory;)V"/>
+<method name="&lt;init&gt;" type="(Ljava/util/Collection;)V"/>
+<method name="withOptimalMatch" type="(Lcom/fasterxml/jackson/core/format/MatchStrength;)Lcom/fasterxml/jackson/core/format/DataFormatDetector;"/>
+<method name="withMinimalMatch" type="(Lcom/fasterxml/jackson/core/format/MatchStrength;)Lcom/fasterxml/jackson/core/format/DataFormatDetector;"/>
+<method name="withMaxInputLookahead" type="(I)Lcom/fasterxml/jackson/core/format/DataFormatDetector;"/>
+<method name="findFormat" type="(Ljava/io/InputStream;)Lcom/fasterxml/jackson/core/format/DataFormatMatcher;"/>
+<method name="findFormat" type="([B)Lcom/fasterxml/jackson/core/format/DataFormatMatcher;"/>
+<method name="findFormat" type="([BII)Lcom/fasterxml/jackson/core/format/DataFormatMatcher;"/>
+<method name="toString" type="()Ljava/lang/String;"/>
+</class>
+<class name="com/fasterxml/jackson/core/format/DataFormatMatcher" super="java/lang/Object">
+<method name="&lt;init&gt;" type="(Ljava/io/InputStream;[BIILcom/fasterxml/jackson/core/JsonFactory;Lcom/fasterxml/jackson/core/format/MatchStrength;)V"/>
+<method name="hasMatch" type="()Z"/>
+<method name="getMatchStrength" type="()Lcom/fasterxml/jackson/core/format/MatchStrength;"/>
+<method name="getMatch" type="()Lcom/fasterxml/jackson/core/JsonFactory;"/>
+<method name="getMatchedFormatName" type="()Ljava/lang/String;"/>
+<method name="createParserWithMatch" type="()Lcom/fasterxml/jackson/core/JsonParser;"/>
+<method name="getDataStream" type="()Ljava/io/InputStream;"/>
+</class>
+<class name="com/fasterxml/jackson/core/format/MatchStrength" super="java/lang/Enum">
+<method name="values" type="()[Lcom/fasterxml/jackson/core/format/MatchStrength;" class_method="true"/>
+<method name="valueOf" type="(Ljava/lang/String;)Lcom/fasterxml/jackson/core/format/MatchStrength;" class_method="true"/>
+</class>
+<class name="com/fasterxml/jackson/core/io/CharTypes" super="java/lang/Object">
+<method name="&lt;init&gt;" type="()V"/>
+<method name="getInputCodeLatin1" type="()[I" class_method="true"/>
+<method name="getInputCodeUtf8" type="()[I" class_method="true"/>
+<method name="getInputCodeLatin1JsNames" type="()[I" class_method="true"/>
+<method name="getInputCodeUtf8JsNames" type="()[I" class_method="true"/>
+<method name="getInputCodeComment" type="()[I" class_method="true"/>
+<method name="getInputCodeWS" type="()[I" class_method="true"/>
+<method name="get7BitOutputEscapes" type="()[I" class_method="true"/>
+<method name="charToHex" type="(I)I" class_method="true"/>
+<method name="appendQuoted" type="(Ljava/lang/StringBuilder;Ljava/lang/String;)V" class_method="true"/>
+<method name="copyHexChars" type="()[C" class_method="true"/>
+<method name="copyHexBytes" type="()[B" class_method="true"/>
+</class>
+<class name="com/fasterxml/jackson/core/io/IOContext" super="java/lang/Object">
+<method name="&lt;init&gt;" type="(Lcom/fasterxml/jackson/core/util/BufferRecycler;Ljava/lang/Object;Z)V"/>
+<method name="setEncoding" type="(Lcom/fasterxml/jackson/core/JsonEncoding;)V"/>
+<method name="withEncoding" type="(Lcom/fasterxml/jackson/core/JsonEncoding;)Lcom/fasterxml/jackson/core/io/IOContext;"/>
+<method name="getSourceReference" type="()Ljava/lang/Object;"/>
+<method name="getEncoding" type="()Lcom/fasterxml/jackson/core/JsonEncoding;"/>
+<method name="isResourceManaged" type="()Z"/>
+<method name="constructTextBuffer" type="()Lcom/fasterxml/jackson/core/util/TextBuffer;"/>
+<method name="allocReadIOBuffer" type="()[B"/>
+<method name="allocReadIOBuffer" type="(I)[B"/>
+<method name="allocWriteEncodingBuffer" type="()[B"/>
+<method name="allocWriteEncodingBuffer" type="(I)[B"/>
+<method name="allocBase64Buffer" type="()[B"/>
+<method name="allocTokenBuffer" type="()[C"/>
+<method name="allocTokenBuffer" type="(I)[C"/>
+<method name="allocConcatBuffer" type="()[C"/>
+<method name="allocNameCopyBuffer" type="(I)[C"/>
+<method name="releaseReadIOBuffer" type="([B)V"/>
+<method name="releaseWriteEncodingBuffer" type="([B)V"/>
+<method name="releaseBase64Buffer" type="([B)V"/>
+<method name="releaseTokenBuffer" type="([C)V"/>
+<method name="releaseConcatBuffer" type="([C)V"/>
+<method name="releaseNameCopyBuffer" type="([C)V"/>
+<method name="_verifyAlloc" type="(Ljava/lang/Object;)V"/>
+<method name="_verifyRelease" type="([B[B)V"/>
+<method name="_verifyRelease" type="([C[C)V"/>
+</class>
+<class name="com/fasterxml/jackson/core/io/JsonStringEncoder" super="java/lang/Object">
+<method name="&lt;init&gt;" type="()V"/>
+<method name="getInstance" type="()Lcom/fasterxml/jackson/core/io/JsonStringEncoder;" class_method="true"/>
+<method name="quoteAsString" type="(Ljava/lang/String;)[C"/>
+<method name="quoteAsUTF8" type="(Ljava/lang/String;)[B"/>
+<method name="encodeAsUTF8" type="(Ljava/lang/String;)[B"/>
+</class>
+<class name="com/fasterxml/jackson/core/io/MergedStream" super="java/io/InputStream">
+<method name="&lt;init&gt;" type="(Lcom/fasterxml/jackson/core/io/IOContext;Ljava/io/InputStream;[BII)V"/>
+<method name="available" type="()I"/>
+<method name="close" type="()V"/>
+<method name="mark" type="(I)V"/>
+<method name="markSupported" type="()Z"/>
+<method name="read" type="()I"/>
+<method name="read" type="([B)I"/>
+<method name="read" type="([BII)I"/>
+<method name="reset" type="()V"/>
+<method name="skip" type="(J)J"/>
+</class>
+<class name="com/fasterxml/jackson/core/io/NumberInput" super="java/lang/Object">
+<method name="&lt;init&gt;" type="()V"/>
+<method name="parseInt" type="([CII)I" class_method="true"/>
+<method name="parseInt" type="(Ljava/lang/String;)I" class_method="true"/>
+<method name="parseLong" type="([CII)J" class_method="true"/>
+<method name="parseLong" type="(Ljava/lang/String;)J" class_method="true"/>
+<method name="inLongRange" type="([CIIZ)Z" class_method="true"/>
+<method name="inLongRange" type="(Ljava/lang/String;Z)Z" class_method="true"/>
+<method name="parseAsInt" type="(Ljava/lang/String;I)I" class_method="true"/>
+<method name="parseAsLong" type="(Ljava/lang/String;J)J" class_method="true"/>
+<method name="parseAsDouble" type="(Ljava/lang/String;D)D" class_method="true"/>
+<method name="parseDouble" type="(Ljava/lang/String;)D" class_method="true"/>
+<method name="parseBigDecimal" type="(Ljava/lang/String;)Ljava/math/BigDecimal;" class_method="true"/>
+<method name="parseBigDecimal" type="([C)Ljava/math/BigDecimal;" class_method="true"/>
+<method name="parseBigDecimal" type="([CII)Ljava/math/BigDecimal;" class_method="true"/>
+</class>
+<class name="com/fasterxml/jackson/core/io/NumberOutput" super="java/lang/Object">
+<method name="&lt;init&gt;" type="()V"/>
+<method name="outputInt" type="(I[CI)I" class_method="true"/>
+<method name="outputInt" type="(I[BI)I" class_method="true"/>
+<method name="outputLong" type="(J[CI)I" class_method="true"/>
+<method name="outputLong" type="(J[BI)I" class_method="true"/>
+<method name="toString" type="(I)Ljava/lang/String;" class_method="true"/>
+<method name="toString" type="(J)Ljava/lang/String;" class_method="true"/>
+<method name="toString" type="(D)Ljava/lang/String;" class_method="true"/>
+<method name="toString" type="(F)Ljava/lang/String;" class_method="true"/>
+</class>
+<class name="com/fasterxml/jackson/core/io/SegmentedStringWriter" super="java/io/Writer">
+<method name="&lt;init&gt;" type="(Lcom/fasterxml/jackson/core/util/BufferRecycler;)V"/>
+<method name="append" type="(C)Ljava/io/Writer;"/>
+<method name="append" type="(Ljava/lang/CharSequence;)Ljava/io/Writer;"/>
+<method name="append" type="(Ljava/lang/CharSequence;II)Ljava/io/Writer;"/>
+<method name="close" type="()V"/>
+<method name="flush" type="()V"/>
+<method name="write" type="([C)V"/>
+<method name="write" type="([CII)V"/>
+<method name="write" type="(I)V"/>
+<method name="write" type="(Ljava/lang/String;)V"/>
+<method name="write" type="(Ljava/lang/String;II)V"/>
+<method name="getAndClear" type="()Ljava/lang/String;"/>
+<method name="append" type="(C)Ljava/lang/Appendable;"/>
+<method name="append" type="(Ljava/lang/CharSequence;II)Ljava/lang/Appendable;"/>
+<method name="append" type="(Ljava/lang/CharSequence;)Ljava/lang/Appendable;"/>
+</class>
+<class name="com/fasterxml/jackson/core/io/UTF32Reader" super="java/io/Reader">
+<method name="&lt;init&gt;" type="(Lcom/fasterxml/jackson/core/io/IOContext;Ljava/io/InputStream;[BIIZ)V"/>
+<method name="close" type="()V"/>
+<method name="read" type="()I"/>
+<method name="read" type="([CII)I"/>
+</class>
+<class name="com/fasterxml/jackson/core/io/UTF8Writer" super="java/io/Writer">
+<method name="&lt;init&gt;" type="(Lcom/fasterxml/jackson/core/io/IOContext;Ljava/io/OutputStream;)V"/>
+<method name="append" type="(C)Ljava/io/Writer;"/>
+<method name="close" type="()V"/>
+<method name="flush" type="()V"/>
+<method name="write" type="([C)V"/>
+<method name="write" type="([CII)V"/>
+<method name="write" type="(I)V"/>
+<method name="write" type="(Ljava/lang/String;)V"/>
+<method name="write" type="(Ljava/lang/String;II)V"/>
+<method name="convertSurrogate" type="(I)I"/>
+<method name="illegalSurrogate" type="(I)V" class_method="true"/>
+<method name="illegalSurrogateDesc" type="(I)Ljava/lang/String;" class_method="true"/>
+<method name="append" type="(C)Ljava/lang/Appendable;"/>
+</class>
+<class name="com/fasterxml/jackson/core/json/ByteSourceJsonBootstrapper" super="java/lang/Object">
+<method name="&lt;init&gt;" type="(Lcom/fasterxml/jackson/core/io/IOContext;Ljava/io/InputStream;)V"/>
+<method name="&lt;init&gt;" type="(Lcom/fasterxml/jackson/core/io/IOContext;[BII)V"/>
+<method name="detectEncoding" type="()Lcom/fasterxml/jackson/core/JsonEncoding;"/>
+<method name="constructReader" type="()Ljava/io/Reader;"/>
+<method name="constructParser" type="(ILcom/fasterxml/jackson/core/ObjectCodec;Lcom/fasterxml/jackson/core/sym/ByteQuadsCanonicalizer;Lcom/fasterxml/jackson/core/sym/CharsToNameCanonicalizer;I)Lcom/fasterxml/jackson/core/JsonParser;"/>
+<method name="hasJSONFormat" type="(Lcom/fasterxml/jackson/core/format/InputAccessor;)Lcom/fasterxml/jackson/core/format/MatchStrength;" class_method="true"/>
+<method name="ensureLoaded" type="(I)Z"/>
+</class>
+<class name="com/fasterxml/jackson/core/json/DupDetector" super="java/lang/Object">
+<method name="rootDetector" type="(Lcom/fasterxml/jackson/core/JsonParser;)Lcom/fasterxml/jackson/core/json/DupDetector;" class_method="true"/>
+<method name="rootDetector" type="(Lcom/fasterxml/jackson/core/JsonGenerator;)Lcom/fasterxml/jackson/core/json/DupDetector;" class_method="true"/>
+<method name="child" type="()Lcom/fasterxml/jackson/core/json/DupDetector;"/>
+<method name="reset" type="()V"/>
+<method name="findLocation" type="()Lcom/fasterxml/jackson/core/JsonLocation;"/>
+<method name="isDup" type="(Ljava/lang/String;)Z"/>
+</class>
+<class name="com/fasterxml/jackson/core/json/JsonGeneratorImpl" super="com/fasterxml/jackson/core/base/GeneratorBase">
+<method name="&lt;init&gt;" type="(Lcom/fasterxml/jackson/core/io/IOContext;ILcom/fasterxml/jackson/core/ObjectCodec;)V"/>
+<method name="setHighestNonEscapedChar" type="(I)Lcom/fasterxml/jackson/core/JsonGenerator;"/>
+<method name="getHighestEscapedChar" type="()I"/>
+<method name="setCharacterEscapes" type="(Lcom/fasterxml/jackson/core/io/CharacterEscapes;)Lcom/fasterxml/jackson/core/JsonGenerator;"/>
+<method name="getCharacterEscapes" type="()Lcom/fasterxml/jackson/core/io/CharacterEscapes;"/>
+<method name="setRootValueSeparator" type="(Lcom/fasterxml/jackson/core/SerializableString;)Lcom/fasterxml/jackson/core/JsonGenerator;"/>
+<method name="version" type="()Lcom/fasterxml/jackson/core/Version;"/>
+<method name="writeStringField" type="(Ljava/lang/String;Ljava/lang/String;)V"/>
+</class>
+<class name="com/fasterxml/jackson/core/json/JsonReadContext" super="com/fasterxml/jackson/core/JsonStreamContext">
+<method name="&lt;init&gt;" type="(Lcom/fasterxml/jackson/core/json/JsonReadContext;Lcom/fasterxml/jackson/core/json/DupDetector;III)V"/>
+<method name="reset" type="(III)V"/>
+<method name="withDupDetector" type="(Lcom/fasterxml/jackson/core/json/DupDetector;)Lcom/fasterxml/jackson/core/json/JsonReadContext;"/>
+<method name="getCurrentValue" type="()Ljava/lang/Object;"/>
+<method name="setCurrentValue" type="(Ljava/lang/Object;)V"/>
+<method name="createRootContext" type="(II)Lcom/fasterxml/jackson/core/json/JsonReadContext;" class_method="true"/>
+<method name="createRootContext" type="(IILcom/fasterxml/jackson/core/json/DupDetector;)Lcom/fasterxml/jackson/core/json/JsonReadContext;" class_method="true"/>
+<method name="createRootContext" type="()Lcom/fasterxml/jackson/core/json/JsonReadContext;" class_method="true"/>
+<method name="createRootContext" type="(Lcom/fasterxml/jackson/core/json/DupDetector;)Lcom/fasterxml/jackson/core/json/JsonReadContext;" class_method="true"/>
+<method name="createChildArrayContext" type="(II)Lcom/fasterxml/jackson/core/json/JsonReadContext;"/>
+<method name="createChildObjectContext" type="(II)Lcom/fasterxml/jackson/core/json/JsonReadContext;"/>
+<method name="getCurrentName" type="()Ljava/lang/String;"/>
+<method name="getParent" type="()Lcom/fasterxml/jackson/core/json/JsonReadContext;"/>
+<method name="getStartLocation" type="(Ljava/lang/Object;)Lcom/fasterxml/jackson/core/JsonLocation;"/>
+<method name="getDupDetector" type="()Lcom/fasterxml/jackson/core/json/DupDetector;"/>
+<method name="expectComma" type="()Z"/>
+<method name="setCurrentName" type="(Ljava/lang/String;)V"/>
+<method name="toString" type="()Ljava/lang/String;"/>
+<method name="getParent" type="()Lcom/fasterxml/jackson/core/JsonStreamContext;"/>
+</class>
+<class name="com/fasterxml/jackson/core/json/JsonWriteContext" super="com/fasterxml/jackson/core/JsonStreamContext">
+<method name="&lt;init&gt;" type="(ILcom/fasterxml/jackson/core/json/JsonWriteContext;Lcom/fasterxml/jackson/core/json/DupDetector;)V"/>
+<method name="reset" type="(I)Lcom/fasterxml/jackson/core/json/JsonWriteContext;"/>
+<method name="withDupDetector" type="(Lcom/fasterxml/jackson/core/json/DupDetector;)Lcom/fasterxml/jackson/core/json/JsonWriteContext;"/>
+<method name="getCurrentValue" type="()Ljava/lang/Object;"/>
+<method name="setCurrentValue" type="(Ljava/lang/Object;)V"/>
+<method name="createRootContext" type="()Lcom/fasterxml/jackson/core/json/JsonWriteContext;" class_method="true"/>
+<method name="createRootContext" type="(Lcom/fasterxml/jackson/core/json/DupDetector;)Lcom/fasterxml/jackson/core/json/JsonWriteContext;" class_method="true"/>
+<method name="createChildArrayContext" type="()Lcom/fasterxml/jackson/core/json/JsonWriteContext;"/>
+<method name="createChildObjectContext" type="()Lcom/fasterxml/jackson/core/json/JsonWriteContext;"/>
+<method name="getParent" type="()Lcom/fasterxml/jackson/core/json/JsonWriteContext;"/>
+<method name="getCurrentName" type="()Ljava/lang/String;"/>
+<method name="getDupDetector" type="()Lcom/fasterxml/jackson/core/json/DupDetector;"/>
+<method name="writeFieldName" type="(Ljava/lang/String;)I"/>
+<method name="writeValue" type="()I"/>
+<method name="appendDesc" type="(Ljava/lang/StringBuilder;)V"/>
+<method name="toString" type="()Ljava/lang/String;"/>
+<method name="getParent" type="()Lcom/fasterxml/jackson/core/JsonStreamContext;"/>
+</class>
+<class name="com/fasterxml/jackson/core/json/ReaderBasedJsonParser" super="com/fasterxml/jackson/core/base/ParserBase">
+<method name="&lt;init&gt;" type="(Lcom/fasterxml/jackson/core/io/IOContext;ILjava/io/Reader;Lcom/fasterxml/jackson/core/ObjectCodec;Lcom/fasterxml/jackson/core/sym/CharsToNameCanonicalizer;[CIIZ)V"/>
+<method name="&lt;init&gt;" type="(Lcom/fasterxml/jackson/core/io/IOContext;ILjava/io/Reader;Lcom/fasterxml/jackson/core/ObjectCodec;Lcom/fasterxml/jackson/core/sym/CharsToNameCanonicalizer;)V"/>
+<method name="getCodec" type="()Lcom/fasterxml/jackson/core/ObjectCodec;"/>
+<method name="setCodec" type="(Lcom/fasterxml/jackson/core/ObjectCodec;)V"/>
+<method name="releaseBuffered" type="(Ljava/io/Writer;)I"/>
+<method name="getInputSource" type="()Ljava/lang/Object;"/>
+<method name="loadMore" type="()Z"/>
+<method name="getNextChar" type="(Ljava/lang/String;)C"/>
+<method name="_closeInput" type="()V"/>
+<method name="_releaseBuffers" type="()V"/>
+<method name="getText" type="()Ljava/lang/String;"/>
+<method name="getValueAsString" type="()Ljava/lang/String;"/>
+<method name="getValueAsString" type="(Ljava/lang/String;)Ljava/lang/String;"/>
+<method name="_getText2" type="(Lcom/fasterxml/jackson/core/JsonToken;)Ljava/lang/String;"/>
+<method name="getTextCharacters" type="()[C"/>
+<method name="getTextLength" type="()I"/>
+<method name="getTextOffset" type="()I"/>
+<method name="getBinaryValue" type="(Lcom/fasterxml/jackson/core/Base64Variant;)[B"/>
+<method name="readBinaryValue" type="(Lcom/fasterxml/jackson/core/Base64Variant;Ljava/io/OutputStream;)I"/>
+<method name="_readBinary" type="(Lcom/fasterxml/jackson/core/Base64Variant;Ljava/io/OutputStream;[B)I"/>
+<method name="nextToken" type="()Lcom/fasterxml/jackson/core/JsonToken;"/>
+<method name="nextFieldName" type="()Ljava/lang/String;"/>
+<method name="nextTextValue" type="()Ljava/lang/String;"/>
+<method name="nextIntValue" type="(I)I"/>
+<method name="nextLongValue" type="(J)J"/>
+<method name="nextBooleanValue" type="()Ljava/lang/Boolean;"/>
+<method name="_parsePosNumber" type="(I)Lcom/fasterxml/jackson/core/JsonToken;"/>
+<method name="_parseNegNumber" type="()Lcom/fasterxml/jackson/core/JsonToken;"/>
+<method name="_handleInvalidNumberStart" type="(IZ)Lcom/fasterxml/jackson/core/JsonToken;"/>
+<method name="_parseName" type="()Ljava/lang/String;"/>
+<method name="_handleOddName" type="(I)Ljava/lang/String;"/>
+<method name="_parseAposName" type="()Ljava/lang/String;"/>
+<method name="_handleOddValue" type="(I)Lcom/fasterxml/jackson/core/JsonToken;"/>
+<method name="_handleApos" type="()Lcom/fasterxml/jackson/core/JsonToken;"/>
+<method name="_finishString" type="()V"/>
+<method name="_finishString2" type="()V"/>
+<method name="_skipString" type="()V"/>
+<method name="_skipCR" type="()V"/>
+<method name="_decodeEscaped" type="()C"/>
+<method name="_matchToken" type="(Ljava/lang/String;I)V"/>
+<method name="_decodeBase64" type="(Lcom/fasterxml/jackson/core/Base64Variant;)[B"/>
+<method name="_reportInvalidToken" type="(Ljava/lang/String;)V"/>
+<method name="_reportInvalidToken" type="(Ljava/lang/String;Ljava/lang/String;)V"/>
+</class>
+<class name="com/fasterxml/jackson/core/json/UTF8JsonGenerator" super="com/fasterxml/jackson/core/json/JsonGeneratorImpl">
+<method name="&lt;init&gt;" type="(Lcom/fasterxml/jackson/core/io/IOContext;ILcom/fasterxml/jackson/core/ObjectCodec;Ljava/io/OutputStream;)V"/>
+<method name="&lt;init&gt;" type="(Lcom/fasterxml/jackson/core/io/IOContext;ILcom/fasterxml/jackson/core/ObjectCodec;Ljava/io/OutputStream;[BIZ)V"/>
+<method name="getOutputTarget" type="()Ljava/lang/Object;"/>
+<method name="getOutputBuffered" type="()I"/>
+<method name="writeFieldName" type="(Ljava/lang/String;)V"/>
+<method name="writeFieldName" type="(Lcom/fasterxml/jackson/core/SerializableString;)V"/>
+<method name="writeStartArray" type="()V"/>
+<method name="writeEndArray" type="()V"/>
+<method name="writeStartObject" type="()V"/>
+<method name="writeEndObject" type="()V"/>
+<method name="_writePPFieldName" type="(Ljava/lang/String;)V"/>
+<method name="_writePPFieldName" type="(Lcom/fasterxml/jackson/core/SerializableString;)V"/>
+<method name="writeString" type="(Ljava/lang/String;)V"/>
+<method name="writeString" type="([CII)V"/>
+<method name="writeString" type="(Lcom/fasterxml/jackson/core/SerializableString;)V"/>
+<method name="writeRawUTF8String" type="([BII)V"/>
+<method name="writeUTF8String" type="([BII)V"/>
+<method name="writeRaw" type="(Ljava/lang/String;)V"/>
+<method name="writeRaw" type="(Ljava/lang/String;II)V"/>
+<method name="writeRaw" type="(Lcom/fasterxml/jackson/core/SerializableString;)V"/>
+<method name="writeRawValue" type="(Lcom/fasterxml/jackson/core/SerializableString;)V"/>
+<method name="writeRaw" type="([CII)V"/>
+<method name="writeRaw" type="(C)V"/>
+<method name="writeBinary" type="(Lcom/fasterxml/jackson/core/Base64Variant;[BII)V"/>
+<method name="writeBinary" type="(Lcom/fasterxml/jackson/core/Base64Variant;Ljava/io/InputStream;I)I"/>
+<method name="writeNumber" type="(S)V"/>
+<method name="writeNumber" type="(I)V"/>
+<method name="writeNumber" type="(J)V"/>
+<method name="writeNumber" type="(Ljava/math/BigInteger;)V"/>
+<method name="writeNumber" type="(D)V"/>
+<method name="writeNumber" type="(F)V"/>
+<method name="writeNumber" type="(Ljava/math/BigDecimal;)V"/>
+<method name="writeNumber" type="(Ljava/lang/String;)V"/>
+<method name="writeBoolean" type="(Z)V"/>
+<method name="writeNull" type="()V"/>
+<method name="_verifyValueWrite" type="(Ljava/lang/String;)V"/>
+<method name="_verifyPrettyValueWrite" type="(Ljava/lang/String;I)V"/>
+<method name="flush" type="()V"/>
+<method name="close" type="()V"/>
+<method name="_releaseBuffers" type="()V"/>
+<method name="_writeBinary" type="(Lcom/fasterxml/jackson/core/Base64Variant;[BII)V"/>
+<method name="_writeBinary" type="(Lcom/fasterxml/jackson/core/Base64Variant;Ljava/io/InputStream;[BI)I"/>
+<method name="_writeBinary" type="(Lcom/fasterxml/jackson/core/Base64Variant;Ljava/io/InputStream;[B)I"/>
+<method name="_outputSurrogates" type="(II)V"/>
+<method name="_flushBuffer" type="()V"/>
+</class>
+<class name="com/fasterxml/jackson/core/json/UTF8StreamJsonParser" super="com/fasterxml/jackson/core/base/ParserBase">
+<method name="&lt;init&gt;" type="(Lcom/fasterxml/jackson/core/io/IOContext;ILjava/io/InputStream;Lcom/fasterxml/jackson/core/ObjectCodec;Lcom/fasterxml/jackson/core/sym/ByteQuadsCanonicalizer;[BIIZ)V"/>
+<method name="getCodec" type="()Lcom/fasterxml/jackson/core/ObjectCodec;"/>
+<method name="setCodec" type="(Lcom/fasterxml/jackson/core/ObjectCodec;)V"/>
+<method name="releaseBuffered" type="(Ljava/io/OutputStream;)I"/>
+<method name="getInputSource" type="()Ljava/lang/Object;"/>
+<method name="loadMore" type="()Z"/>
+<method name="_loadToHaveAtLeast" type="(I)Z"/>
+<method name="_closeInput" type="()V"/>
+<method name="_releaseBuffers" type="()V"/>
+<method name="getText" type="()Ljava/lang/String;"/>
+<method name="getValueAsString" type="()Ljava/lang/String;"/>
+<method name="getValueAsString" type="(Ljava/lang/String;)Ljava/lang/String;"/>
+<method name="getValueAsInt" type="()I"/>
+<method name="getValueAsInt" type="(I)I"/>
+<method name="_getText2" type="(Lcom/fasterxml/jackson/core/JsonToken;)Ljava/lang/String;"/>
+<method name="getTextCharacters" type="()[C"/>
+<method name="getTextLength" type="()I"/>
+<method name="getTextOffset" type="()I"/>
+<method name="getBinaryValue" type="(Lcom/fasterxml/jackson/core/Base64Variant;)[B"/>
+<method name="readBinaryValue" type="(Lcom/fasterxml/jackson/core/Base64Variant;Ljava/io/OutputStream;)I"/>
+<method name="_readBinary" type="(Lcom/fasterxml/jackson/core/Base64Variant;Ljava/io/OutputStream;[B)I"/>
+<method name="getTokenLocation" type="()Lcom/fasterxml/jackson/core/JsonLocation;"/>
+<method name="getCurrentLocation" type="()Lcom/fasterxml/jackson/core/JsonLocation;"/>
+<method name="nextToken" type="()Lcom/fasterxml/jackson/core/JsonToken;"/>
+<method name="nextFieldName" type="(Lcom/fasterxml/jackson/core/SerializableString;)Z"/>
+<method name="nextFieldName" type="()Ljava/lang/String;"/>
+<method name="nextTextValue" type="()Ljava/lang/String;"/>
+<method name="nextIntValue" type="(I)I"/>
+<method name="nextLongValue" type="(J)J"/>
+<method name="nextBooleanValue" type="()Ljava/lang/Boolean;"/>
+<method name="_parsePosNumber" type="(I)Lcom/fasterxml/jackson/core/JsonToken;"/>
+<method name="_parseNegNumber" type="()Lcom/fasterxml/jackson/core/JsonToken;"/>
+<method name="_parseName" type="(I)Ljava/lang/String;"/>
+<method name="parseMediumName" type="(I)Ljava/lang/String;"/>
+<method name="parseMediumName2" type="(II)Ljava/lang/String;"/>
+<method name="parseLongName" type="(III)Ljava/lang/String;"/>
+<method name="slowParseName" type="()Ljava/lang/String;"/>
+<method name="parseEscapedName" type="([IIIII)Ljava/lang/String;"/>
+<method name="_handleOddName" type="(I)Ljava/lang/String;"/>
+<method name="_parseAposName" type="()Ljava/lang/String;"/>
+<method name="_finishString" type="()V"/>
+<method name="_finishAndReturnString" type="()Ljava/lang/String;"/>
+<method name="_skipString" type="()V"/>
+<method name="_handleUnexpectedValue" type="(I)Lcom/fasterxml/jackson/core/JsonToken;"/>
+<method name="_handleApos" type="()Lcom/fasterxml/jackson/core/JsonToken;"/>
+<method name="_handleInvalidNumberStart" type="(IZ)Lcom/fasterxml/jackson/core/JsonToken;"/>
+<method name="_matchToken" type="(Ljava/lang/String;I)V"/>
+<method name="_decodeEscaped" type="()C"/>
+<method name="_decodeCharForError" type="(I)I"/>
+<method name="_skipCR" type="()V"/>
+<method name="_reportInvalidToken" type="(Ljava/lang/String;)V"/>
+<method name="_reportInvalidToken" type="(Ljava/lang/String;Ljava/lang/String;)V"/>
+<method name="_reportInvalidChar" type="(I)V"/>
+<method name="_reportInvalidInitial" type="(I)V"/>
+<method name="_reportInvalidOther" type="(I)V"/>
+<method name="_reportInvalidOther" type="(II)V"/>
+<method name="growArrayBy" type="([II)[I" class_method="true"/>
+<method name="_decodeBase64" type="(Lcom/fasterxml/jackson/core/Base64Variant;)[B"/>
+</class>
+<class name="com/fasterxml/jackson/core/json/WriterBasedJsonGenerator" super="com/fasterxml/jackson/core/json/JsonGeneratorImpl">
+<method name="&lt;init&gt;" type="(Lcom/fasterxml/jackson/core/io/IOContext;ILcom/fasterxml/jackson/core/ObjectCodec;Ljava/io/Writer;)V"/>
+<method name="getOutputTarget" type="()Ljava/lang/Object;"/>
+<method name="getOutputBuffered" type="()I"/>
+<method name="writeFieldName" type="(Ljava/lang/String;)V"/>
+<method name="writeFieldName" type="(Lcom/fasterxml/jackson/core/SerializableString;)V"/>
+<method name="writeStartArray" type="()V"/>
+<method name="writeEndArray" type="()V"/>
+<method name="writeStartObject" type="()V"/>
+<method name="writeEndObject" type="()V"/>
+<method name="_writeFieldName" type="(Ljava/lang/String;Z)V"/>
+<method name="_writeFieldName" type="(Lcom/fasterxml/jackson/core/SerializableString;Z)V"/>
+<method name="_writePPFieldName" type="(Ljava/lang/String;Z)V"/>
+<method name="_writePPFieldName" type="(Lcom/fasterxml/jackson/core/SerializableString;Z)V"/>
+<method name="writeString" type="(Ljava/lang/String;)V"/>
+<method name="writeString" type="([CII)V"/>
+<method name="writeString" type="(Lcom/fasterxml/jackson/core/SerializableString;)V"/>
+<method name="writeRawUTF8String" type="([BII)V"/>
+<method name="writeUTF8String" type="([BII)V"/>
+<method name="writeRaw" type="(Ljava/lang/String;)V"/>
+<method name="writeRaw" type="(Ljava/lang/String;II)V"/>
+<method name="writeRaw" type="(Lcom/fasterxml/jackson/core/SerializableString;)V"/>
+<method name="writeRaw" type="([CII)V"/>
+<method name="writeRaw" type="(C)V"/>
+<method name="writeBinary" type="(Lcom/fasterxml/jackson/core/Base64Variant;[BII)V"/>
+<method name="writeBinary" type="(Lcom/fasterxml/jackson/core/Base64Variant;Ljava/io/InputStream;I)I"/>
+<method name="writeNumber" type="(S)V"/>
+<method name="writeNumber" type="(I)V"/>
+<method name="writeNumber" type="(J)V"/>
+<method name="writeNumber" type="(Ljava/math/BigInteger;)V"/>
+<method name="writeNumber" type="(D)V"/>
+<method name="writeNumber" type="(F)V"/>
+<method name="writeNumber" type="(Ljava/math/BigDecimal;)V"/>
+<method name="writeNumber" type="(Ljava/lang/String;)V"/>
+<method name="writeBoolean" type="(Z)V"/>
+<method name="writeNull" type="()V"/>
+<method name="_verifyValueWrite" type="(Ljava/lang/String;)V"/>
+<method name="_verifyPrettyValueWrite" type="(Ljava/lang/String;)V"/>
+<method name="flush" type="()V"/>
+<method name="close" type="()V"/>
+<method name="_releaseBuffers" type="()V"/>
+<method name="_writeBinary" type="(Lcom/fasterxml/jackson/core/Base64Variant;[BII)V"/>
+<method name="_writeBinary" type="(Lcom/fasterxml/jackson/core/Base64Variant;Ljava/io/InputStream;[BI)I"/>
+<method name="_writeBinary" type="(Lcom/fasterxml/jackson/core/Base64Variant;Ljava/io/InputStream;[B)I"/>
+<method name="_flushBuffer" type="()V"/>
+</class>
+<class name="com/fasterxml/jackson/core/JsonEncoding" super="java/lang/Enum">
+<method name="values" type="()[Lcom/fasterxml/jackson/core/JsonEncoding;" class_method="true"/>
+<method name="valueOf" type="(Ljava/lang/String;)Lcom/fasterxml/jackson/core/JsonEncoding;" class_method="true"/>
+<method name="getJavaName" type="()Ljava/lang/String;"/>
+<method name="isBigEndian" type="()Z"/>
+<method name="bits" type="()I"/>
+</class>
+<class name="com/fasterxml/jackson/core/JsonFactory$Feature" super="java/lang/Enum">
+<method name="values" type="()[Lcom/fasterxml/jackson/core/JsonFactory$Feature;" class_method="true"/>
+<method name="valueOf" type="(Ljava/lang/String;)Lcom/fasterxml/jackson/core/JsonFactory$Feature;" class_method="true"/>
+<method name="collectDefaults" type="()I" class_method="true"/>
+<method name="enabledByDefault" type="()Z"/>
+<method name="enabledIn" type="(I)Z"/>
+<method name="getMask" type="()I"/>
+</class>
+<class name="com/fasterxml/jackson/core/JsonGenerationException" super="com/fasterxml/jackson/core/JsonProcessingException">
+<method name="&lt;init&gt;" type="(Ljava/lang/Throwable;)V"/>
+<method name="&lt;init&gt;" type="(Ljava/lang/String;)V"/>
+<method name="&lt;init&gt;" type="(Ljava/lang/String;Ljava/lang/Throwable;)V"/>
+</class>
+<class name="com/fasterxml/jackson/core/JsonGenerator$Feature" super="java/lang/Enum">
+<method name="values" type="()[Lcom/fasterxml/jackson/core/JsonGenerator$Feature;" class_method="true"/>
+<method name="valueOf" type="(Ljava/lang/String;)Lcom/fasterxml/jackson/core/JsonGenerator$Feature;" class_method="true"/>
+<method name="collectDefaults" type="()I" class_method="true"/>
+<method name="enabledByDefault" type="()Z"/>
+<method name="enabledIn" type="(I)Z"/>
+<method name="getMask" type="()I"/>
+</class>
+<class name="com/fasterxml/jackson/core/JsonParseException" super="com/fasterxml/jackson/core/JsonProcessingException">
+<method name="&lt;init&gt;" type="(Ljava/lang/String;Lcom/fasterxml/jackson/core/JsonLocation;)V"/>
+<method name="&lt;init&gt;" type="(Ljava/lang/String;Lcom/fasterxml/jackson/core/JsonLocation;Ljava/lang/Throwable;)V"/>
+</class>
+<class name="com/fasterxml/jackson/core/JsonParser$Feature" super="java/lang/Enum">
+<method name="values" type="()[Lcom/fasterxml/jackson/core/JsonParser$Feature;" class_method="true"/>
+<method name="valueOf" type="(Ljava/lang/String;)Lcom/fasterxml/jackson/core/JsonParser$Feature;" class_method="true"/>
+<method name="collectDefaults" type="()I" class_method="true"/>
+<method name="enabledByDefault" type="()Z"/>
+<method name="enabledIn" type="(I)Z"/>
+<method name="getMask" type="()I"/>
+</class>
+<class name="com/fasterxml/jackson/core/JsonParser$NumberType" super="java/lang/Enum">
+<method name="values" type="()[Lcom/fasterxml/jackson/core/JsonParser$NumberType;" class_method="true"/>
+<method name="valueOf" type="(Ljava/lang/String;)Lcom/fasterxml/jackson/core/JsonParser$NumberType;" class_method="true"/>
+</class>
+<class name="com/fasterxml/jackson/core/JsonPointer" super="java/lang/Object">
+<method name="&lt;init&gt;" type="()V"/>
+<method name="&lt;init&gt;" type="(Ljava/lang/String;Ljava/lang/String;Lcom/fasterxml/jackson/core/JsonPointer;)V"/>
+<method name="&lt;init&gt;" type="(Ljava/lang/String;Ljava/lang/String;ILcom/fasterxml/jackson/core/JsonPointer;)V"/>
+<method name="compile" type="(Ljava/lang/String;)Lcom/fasterxml/jackson/core/JsonPointer;" class_method="true"/>
+<method name="valueOf" type="(Ljava/lang/String;)Lcom/fasterxml/jackson/core/JsonPointer;" class_method="true"/>
+<method name="matches" type="()Z"/>
+<method name="getMatchingProperty" type="()Ljava/lang/String;"/>
+<method name="getMatchingIndex" type="()I"/>
+<method name="mayMatchProperty" type="()Z"/>
+<method name="mayMatchElement" type="()Z"/>
+<method name="last" type="()Lcom/fasterxml/jackson/core/JsonPointer;"/>
+<method name="append" type="(Lcom/fasterxml/jackson/core/JsonPointer;)Lcom/fasterxml/jackson/core/JsonPointer;"/>
+<method name="matchesProperty" type="(Ljava/lang/String;)Z"/>
+<method name="matchProperty" type="(Ljava/lang/String;)Lcom/fasterxml/jackson/core/JsonPointer;"/>
+<method name="matchesElement" type="(I)Z"/>
+<method name="matchElement" type="(I)Lcom/fasterxml/jackson/core/JsonPointer;"/>
+<method name="tail" type="()Lcom/fasterxml/jackson/core/JsonPointer;"/>
+<method name="head" type="()Lcom/fasterxml/jackson/core/JsonPointer;"/>
+<method name="toString" type="()Ljava/lang/String;"/>
+<method name="hashCode" type="()I"/>
+<method name="equals" type="(Ljava/lang/Object;)Z"/>
+<method name="_parseTail" type="(Ljava/lang/String;)Lcom/fasterxml/jackson/core/JsonPointer;" class_method="true"/>
+<method name="_parseQuotedTail" type="(Ljava/lang/String;I)Lcom/fasterxml/jackson/core/JsonPointer;" class_method="true"/>
+<method name="_constructHead" type="()Lcom/fasterxml/jackson/core/JsonPointer;"/>
+<method name="_constructHead" type="(ILcom/fasterxml/jackson/core/JsonPointer;)Lcom/fasterxml/jackson/core/JsonPointer;"/>
+</class>
+<class name="com/fasterxml/jackson/core/JsonProcessingException" super="java/io/IOException">
+<method name="&lt;init&gt;" type="(Ljava/lang/String;Lcom/fasterxml/jackson/core/JsonLocation;Ljava/lang/Throwable;)V"/>
+<method name="&lt;init&gt;" type="(Ljava/lang/String;)V"/>
+<method name="&lt;init&gt;" type="(Ljava/lang/String;Lcom/fasterxml/jackson/core/JsonLocation;)V"/>
+<method name="&lt;init&gt;" type="(Ljava/lang/String;Ljava/lang/Throwable;)V"/>
+<method name="&lt;init&gt;" type="(Ljava/lang/Throwable;)V"/>
+<method name="getLocation" type="()Lcom/fasterxml/jackson/core/JsonLocation;"/>
+<method name="getOriginalMessage" type="()Ljava/lang/String;"/>
+<method name="getMessageSuffix" type="()Ljava/lang/String;"/>
+<method name="getMessage" type="()Ljava/lang/String;"/>
+<method name="toString" type="()Ljava/lang/String;"/>
+</class>
+<class name="com/fasterxml/jackson/core/JsonStreamContext" super="java/lang/Object">
+<method name="&lt;init&gt;" type="()V"/>
+<method name="getParent" type="()Lcom/fasterxml/jackson/core/JsonStreamContext;"/>
+<method name="inArray" type="()Z"/>
+<method name="inRoot" type="()Z"/>
+<method name="inObject" type="()Z"/>
+<method name="getTypeDesc" type="()Ljava/lang/String;"/>
+<method name="getEntryCount" type="()I"/>
+<method name="getCurrentIndex" type="()I"/>
+<method name="getCurrentName" type="()Ljava/lang/String;"/>
+<method name="getCurrentValue" type="()Ljava/lang/Object;"/>
+<method name="setCurrentValue" type="(Ljava/lang/Object;)V"/>
+</class>
+<class name="com/fasterxml/jackson/core/JsonToken" super="java/lang/Enum">
+<method name="values" type="()[Lcom/fasterxml/jackson/core/JsonToken;" class_method="true"/>
+<method name="valueOf" type="(Ljava/lang/String;)Lcom/fasterxml/jackson/core/JsonToken;" class_method="true"/>
+<method name="id" type="()I"/>
+<method name="asString" type="()Ljava/lang/String;"/>
+<method name="asCharArray" type="()[C"/>
+<method name="asByteArray" type="()[B"/>
+<method name="isNumeric" type="()Z"/>
+<method name="isStructStart" type="()Z"/>
+<method name="isStructEnd" type="()Z"/>
+<method name="isScalarValue" type="()Z"/>
+<method name="isBoolean" type="()Z"/>
+</class>
+<class name="com/fasterxml/jackson/core/sym/ByteQuadsCanonicalizer$TableInfo" super="java/lang/Object">
+<method name="&lt;init&gt;" type="(III[I[Ljava/lang/String;II)V"/>
+<method name="&lt;init&gt;" type="(Lcom/fasterxml/jackson/core/sym/ByteQuadsCanonicalizer;)V"/>
+<method name="createInitial" type="(I)Lcom/fasterxml/jackson/core/sym/ByteQuadsCanonicalizer$TableInfo;" class_method="true"/>
+</class>
+<class name="com/fasterxml/jackson/core/sym/ByteQuadsCanonicalizer" super="java/lang/Object">
+<method name="createRoot" type="()Lcom/fasterxml/jackson/core/sym/ByteQuadsCanonicalizer;" class_method="true"/>
+<method name="createRoot" type="(I)Lcom/fasterxml/jackson/core/sym/ByteQuadsCanonicalizer;" class_method="true"/>
+<method name="makeChild" type="(I)Lcom/fasterxml/jackson/core/sym/ByteQuadsCanonicalizer;"/>
+<method name="release" type="()V"/>
+<method name="size" type="()I"/>
+<method name="bucketCount" type="()I"/>
+<method name="maybeDirty" type="()Z"/>
+<method name="hashSeed" type="()I"/>
+<method name="primaryCount" type="()I"/>
+<method name="secondaryCount" type="()I"/>
+<method name="tertiaryCount" type="()I"/>
+<method name="spilloverCount" type="()I"/>
+<method name="totalCount" type="()I"/>
+<method name="toString" type="()Ljava/lang/String;"/>
+<method name="findName" type="(I)Ljava/lang/String;"/>
+<method name="findName" type="(II)Ljava/lang/String;"/>
+<method name="findName" type="(III)Ljava/lang/String;"/>
+<method name="findName" type="([II)Ljava/lang/String;"/>
+<method name="addName" type="(Ljava/lang/String;I)Ljava/lang/String;"/>
+<method name="addName" type="(Ljava/lang/String;II)Ljava/lang/String;"/>
+<method name="addName" type="(Ljava/lang/String;III)Ljava/lang/String;"/>
+<method name="addName" type="(Ljava/lang/String;[II)Ljava/lang/String;"/>
+<method name="calcHash" type="(I)I"/>
+<method name="calcHash" type="(II)I"/>
+<method name="calcHash" type="(III)I"/>
+<method name="calcHash" type="([II)I"/>
+<method name="_reportTooManyCollisions" type="()V"/>
+<method name="_calcTertiaryShift" type="(I)I" class_method="true"/>
+</class>
+<class name="com/fasterxml/jackson/core/sym/BytesToNameCanonicalizer$Bucket" super="java/lang/Object">
+<method name="&lt;init&gt;" type="(Lcom/fasterxml/jackson/core/sym/Name;Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer$Bucket;)V"/>
+<method name="find" type="(III)Lcom/fasterxml/jackson/core/sym/Name;"/>
+<method name="find" type="(IIII)Lcom/fasterxml/jackson/core/sym/Name;"/>
+<method name="find" type="(I[II)Lcom/fasterxml/jackson/core/sym/Name;"/>
+</class>
+<class name="com/fasterxml/jackson/core/sym/BytesToNameCanonicalizer$TableInfo" super="java/lang/Object">
+<method name="&lt;init&gt;" type="(II[I[Lcom/fasterxml/jackson/core/sym/Name;[Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer$Bucket;III)V"/>
+<method name="&lt;init&gt;" type="(Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer;)V"/>
+</class>
+<class name="com/fasterxml/jackson/core/sym/BytesToNameCanonicalizer" super="java/lang/Object">
+<method name="createRoot" type="()Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer;" class_method="true"/>
+<method name="createRoot" type="(I)Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer;" class_method="true"/>
+<method name="makeChild" type="(I)Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer;"/>
+<method name="makeChild" type="(ZZ)Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer;"/>
+<method name="release" type="()V"/>
+<method name="size" type="()I"/>
+<method name="bucketCount" type="()I"/>
+<method name="maybeDirty" type="()Z"/>
+<method name="hashSeed" type="()I"/>
+<method name="collisionCount" type="()I"/>
+<method name="maxCollisionLength" type="()I"/>
+<method name="getEmptyName" type="()Lcom/fasterxml/jackson/core/sym/Name;" class_method="true"/>
+<method name="findName" type="(I)Lcom/fasterxml/jackson/core/sym/Name;"/>
+<method name="findName" type="(II)Lcom/fasterxml/jackson/core/sym/Name;"/>
+<method name="findName" type="(III)Lcom/fasterxml/jackson/core/sym/Name;"/>
+<method name="findName" type="([II)Lcom/fasterxml/jackson/core/sym/Name;"/>
+<method name="addName" type="(Ljava/lang/String;II)Lcom/fasterxml/jackson/core/sym/Name;"/>
+<method name="addName" type="(Ljava/lang/String;[II)Lcom/fasterxml/jackson/core/sym/Name;"/>
+<method name="calcHash" type="(I)I"/>
+<method name="calcHash" type="(II)I"/>
+<method name="calcHash" type="(III)I"/>
+<method name="calcHash" type="([II)I"/>
+<method name="calcQuads" type="([B)[I" class_method="true"/>
+<method name="reportTooManyCollisions" type="(I)V"/>
+</class>
+<class name="com/fasterxml/jackson/core/sym/CharsToNameCanonicalizer$Bucket" super="java/lang/Object">
+<method name="&lt;init&gt;" type="(Ljava/lang/String;Lcom/fasterxml/jackson/core/sym/CharsToNameCanonicalizer$Bucket;)V"/>
+<method name="has" type="([CII)Ljava/lang/String;"/>
+</class>
+<class name="com/fasterxml/jackson/core/sym/CharsToNameCanonicalizer" super="java/lang/Object">
+<method name="createRoot" type="()Lcom/fasterxml/jackson/core/sym/CharsToNameCanonicalizer;" class_method="true"/>
+<method name="createRoot" type="(I)Lcom/fasterxml/jackson/core/sym/CharsToNameCanonicalizer;" class_method="true"/>
+<method name="makeChild" type="(I)Lcom/fasterxml/jackson/core/sym/CharsToNameCanonicalizer;"/>
+<method name="release" type="()V"/>
+<method name="size" type="()I"/>
+<method name="bucketCount" type="()I"/>
+<method name="maybeDirty" type="()Z"/>
+<method name="hashSeed" type="()I"/>
+<method name="collisionCount" type="()I"/>
+<method name="maxCollisionLength" type="()I"/>
+<method name="findSymbol" type="([CIII)Ljava/lang/String;"/>
+<method name="_hashToIndex" type="(I)I"/>
+<method name="calcHash" type="([CII)I"/>
+<method name="calcHash" type="(Ljava/lang/String;)I"/>
+<method name="reportTooManyCollisions" type="(I)V"/>
+</class>
+<class name="com/fasterxml/jackson/core/sym/Name" super="java/lang/Object">
+<method name="&lt;init&gt;" type="(Ljava/lang/String;I)V"/>
+<method name="getName" type="()Ljava/lang/String;"/>
+<method name="equals" type="(I)Z"/>
+<method name="equals" type="(II)Z"/>
+<method name="equals" type="(III)Z"/>
+<method name="equals" type="([II)Z"/>
+<method name="toString" type="()Ljava/lang/String;"/>
+<method name="hashCode" type="()I"/>
+<method name="equals" type="(Ljava/lang/Object;)Z"/>
+</class>
+<class name="com/fasterxml/jackson/core/sym/Name1" super="com/fasterxml/jackson/core/sym/Name">
+<method name="&lt;init&gt;" type="(Ljava/lang/String;II)V"/>
+<method name="getEmptyName" type="()Lcom/fasterxml/jackson/core/sym/Name1;" class_method="true"/>
+<method name="equals" type="(I)Z"/>
+<method name="equals" type="(II)Z"/>
+<method name="equals" type="(III)Z"/>
+<method name="equals" type="([II)Z"/>
+</class>
+<class name="com/fasterxml/jackson/core/sym/Name2" super="com/fasterxml/jackson/core/sym/Name">
+<method name="&lt;init&gt;" type="(Ljava/lang/String;III)V"/>
+<method name="equals" type="(I)Z"/>
+<method name="equals" type="(II)Z"/>
+<method name="equals" type="(III)Z"/>
+<method name="equals" type="([II)Z"/>
+</class>
+<class name="com/fasterxml/jackson/core/sym/Name3" super="com/fasterxml/jackson/core/sym/Name">
+<method name="&lt;init&gt;" type="(Ljava/lang/String;IIII)V"/>
+<method name="equals" type="(I)Z"/>
+<method name="equals" type="(II)Z"/>
+<method name="equals" type="(III)Z"/>
+<method name="equals" type="([II)Z"/>
+</class>
+<class name="com/fasterxml/jackson/core/sym/NameN" super="com/fasterxml/jackson/core/sym/Name">
+<method name="&lt;init&gt;" type="(Ljava/lang/String;IIIII[II)V"/>
+<method name="construct" type="(Ljava/lang/String;I[II)Lcom/fasterxml/jackson/core/sym/NameN;" class_method="true"/>
+<method name="equals" type="(I)Z"/>
+<method name="equals" type="(II)Z"/>
+<method name="equals" type="(III)Z"/>
+<method name="equals" type="([II)Z"/>
+</class>
+<class name="com/fasterxml/jackson/core/TreeCodec" super="java/lang/Object">
+<method name="&lt;init&gt;" type="()V"/>
+<method name="readTree" type="(Lcom/fasterxml/jackson/core/JsonParser;)Lcom/fasterxml/jackson/core/TreeNode;"/>
+<method name="writeTree" type="(Lcom/fasterxml/jackson/core/JsonGenerator;Lcom/fasterxml/jackson/core/TreeNode;)V"/>
+<method name="createArrayNode" type="()Lcom/fasterxml/jackson/core/TreeNode;"/>
+<method name="createObjectNode" type="()Lcom/fasterxml/jackson/core/TreeNode;"/>
+<method name="treeAsTokens" type="(Lcom/fasterxml/jackson/core/TreeNode;)Lcom/fasterxml/jackson/core/JsonParser;"/>
+</class>
+<class name="com/fasterxml/jackson/core/type/ResolvedType" super="java/lang/Object">
+<method name="&lt;init&gt;" type="()V"/>
+<method name="getRawClass" type="()Ljava/lang/Class;"/>
+<method name="hasRawClass" type="(Ljava/lang/Class;)Z"/>
+<method name="isAbstract" type="()Z"/>
+<method name="isConcrete" type="()Z"/>
+<method name="isThrowable" type="()Z"/>
+<method name="isArrayType" type="()Z"/>
+<method name="isEnumType" type="()Z"/>
+<method name="isInterface" type="()Z"/>
+<method name="isPrimitive" type="()Z"/>
+<method name="isFinal" type="()Z"/>
+<method name="isContainerType" type="()Z"/>
+<method name="isCollectionLikeType" type="()Z"/>
+<method name="isReferenceType" type="()Z"/>
+<method name="isMapLikeType" type="()Z"/>
+<method name="hasGenericTypes" type="()Z"/>
+<method name="getParameterSource" type="()Ljava/lang/Class;"/>
+<method name="getKeyType" type="()Lcom/fasterxml/jackson/core/type/ResolvedType;"/>
+<method name="getContentType" type="()Lcom/fasterxml/jackson/core/type/ResolvedType;"/>
+<method name="getReferencedType" type="()Lcom/fasterxml/jackson/core/type/ResolvedType;"/>
+<method name="containedTypeCount" type="()I"/>
+<method name="containedType" type="(I)Lcom/fasterxml/jackson/core/type/ResolvedType;"/>
+<method name="containedTypeName" type="(I)Ljava/lang/String;"/>
+<method name="toCanonical" type="()Ljava/lang/String;"/>
+</class>
+<class name="com/fasterxml/jackson/core/util/BufferRecycler" super="java/lang/Object">
+<method name="&lt;init&gt;" type="()V"/>
+<method name="&lt;init&gt;" type="(II)V"/>
+<method name="allocByteBuffer" type="(I)[B"/>
+<method name="allocByteBuffer" type="(II)[B"/>
+<method name="releaseByteBuffer" type="(I[B)V"/>
+<method name="allocCharBuffer" type="(I)[C"/>
+<method name="allocCharBuffer" type="(II)[C"/>
+<method name="releaseCharBuffer" type="(I[C)V"/>
+<method name="byteBufferLength" type="(I)I"/>
+<method name="charBufferLength" type="(I)I"/>
+<method name="balloc" type="(I)[B"/>
+<method name="calloc" type="(I)[C"/>
+</class>
+<class name="com/fasterxml/jackson/core/util/ByteArrayBuilder" super="java/io/OutputStream">
+<method name="&lt;init&gt;" type="()V"/>
+<method name="&lt;init&gt;" type="(Lcom/fasterxml/jackson/core/util/BufferRecycler;)V"/>
+<method name="&lt;init&gt;" type="(I)V"/>
+<method name="&lt;init&gt;" type="(Lcom/fasterxml/jackson/core/util/BufferRecycler;I)V"/>
+<method name="reset" type="()V"/>
+<method name="release" type="()V"/>
+<method name="append" type="(I)V"/>
+<method name="appendTwoBytes" type="(I)V"/>
+<method name="appendThreeBytes" type="(I)V"/>
+<method name="toByteArray" type="()[B"/>
+<method name="resetAndGetFirstSegment" type="()[B"/>
+<method name="finishCurrentSegment" type="()[B"/>
+<method name="completeAndCoalesce" type="(I)[B"/>
+<method name="getCurrentSegment" type="()[B"/>
+<method name="setCurrentSegmentLength" type="(I)V"/>
+<method name="getCurrentSegmentLength" type="()I"/>
+<method name="write" type="([B)V"/>
+<method name="write" type="([BII)V"/>
+<method name="write" type="(I)V"/>
+<method name="close" type="()V"/>
+<method name="flush" type="()V"/>
+</class>
+<class name="com/fasterxml/jackson/core/util/DefaultIndenter" super="com/fasterxml/jackson/core/util/DefaultPrettyPrinter$NopIndenter">
+<method name="&lt;init&gt;" type="()V"/>
+<method name="&lt;init&gt;" type="(Ljava/lang/String;Ljava/lang/String;)V"/>
+<method name="withLinefeed" type="(Ljava/lang/String;)Lcom/fasterxml/jackson/core/util/DefaultIndenter;"/>
+<method name="withIndent" type="(Ljava/lang/String;)Lcom/fasterxml/jackson/core/util/DefaultIndenter;"/>
+<method name="isInline" type="()Z"/>
+<method name="writeIndentation" type="(Lcom/fasterxml/jackson/core/JsonGenerator;I)V"/>
+<method name="getEol" type="()Ljava/lang/String;"/>
+<method name="getIndent" type="()Ljava/lang/String;"/>
+</class>
+<class name="com/fasterxml/jackson/core/util/DefaultPrettyPrinter$FixedSpaceIndenter" super="com/fasterxml/jackson/core/util/DefaultPrettyPrinter$NopIndenter">
+<method name="&lt;init&gt;" type="()V"/>
+<method name="writeIndentation" type="(Lcom/fasterxml/jackson/core/JsonGenerator;I)V"/>
+<method name="isInline" type="()Z"/>
+</class>
+<class name="com/fasterxml/jackson/core/util/DefaultPrettyPrinter$Lf2SpacesIndenter" super="com/fasterxml/jackson/core/util/DefaultIndenter">
+<method name="&lt;init&gt;" type="()V"/>
+<method name="&lt;init&gt;" type="(Ljava/lang/String;)V"/>
+<method name="withLinefeed" type="(Ljava/lang/String;)Lcom/fasterxml/jackson/core/util/DefaultPrettyPrinter$Lf2SpacesIndenter;"/>
+<method name="withLinefeed" type="(Ljava/lang/String;)Lcom/fasterxml/jackson/core/util/DefaultIndenter;"/>
+</class>
+<class name="com/fasterxml/jackson/core/util/InternCache" super="java/util/concurrent/ConcurrentHashMap">
+<method name="intern" type="(Ljava/lang/String;)Ljava/lang/String;"/>
+</class>
+<class name="com/fasterxml/jackson/core/util/JsonGeneratorDelegate" super="com/fasterxml/jackson/core/JsonGenerator">
+<method name="&lt;init&gt;" type="(Lcom/fasterxml/jackson/core/JsonGenerator;)V"/>
+<method name="&lt;init&gt;" type="(Lcom/fasterxml/jackson/core/JsonGenerator;Z)V"/>
+<method name="getCurrentValue" type="()Ljava/lang/Object;"/>
+<method name="setCurrentValue" type="(Ljava/lang/Object;)V"/>
+<method name="getDelegate" type="()Lcom/fasterxml/jackson/core/JsonGenerator;"/>
+<method name="getCodec" type="()Lcom/fasterxml/jackson/core/ObjectCodec;"/>
+<method name="setCodec" type="(Lcom/fasterxml/jackson/core/ObjectCodec;)Lcom/fasterxml/jackson/core/JsonGenerator;"/>
+<method name="setSchema" type="(Lcom/fasterxml/jackson/core/FormatSchema;)V"/>
+<method name="getSchema" type="()Lcom/fasterxml/jackson/core/FormatSchema;"/>
+<method name="version" type="()Lcom/fasterxml/jackson/core/Version;"/>
+<method name="getOutputTarget" type="()Ljava/lang/Object;"/>
+<method name="getOutputBuffered" type="()I"/>
+<method name="canUseSchema" type="(Lcom/fasterxml/jackson/core/FormatSchema;)Z"/>
+<method name="canWriteTypeId" type="()Z"/>
+<method name="canWriteObjectId" type="()Z"/>
+<method name="canWriteBinaryNatively" type="()Z"/>
+<method name="canOmitFields" type="()Z"/>
+<method name="enable" type="(Lcom/fasterxml/jackson/core/JsonGenerator$Feature;)Lcom/fasterxml/jackson/core/JsonGenerator;"/>
+<method name="disable" type="(Lcom/fasterxml/jackson/core/JsonGenerator$Feature;)Lcom/fasterxml/jackson/core/JsonGenerator;"/>
+<method name="isEnabled" type="(Lcom/fasterxml/jackson/core/JsonGenerator$Feature;)Z"/>
+<method name="getFeatureMask" type="()I"/>
+<method name="setFeatureMask" type="(I)Lcom/fasterxml/jackson/core/JsonGenerator;"/>
+<method name="setPrettyPrinter" type="(Lcom/fasterxml/jackson/core/PrettyPrinter;)Lcom/fasterxml/jackson/core/JsonGenerator;"/>
+<method name="getPrettyPrinter" type="()Lcom/fasterxml/jackson/core/PrettyPrinter;"/>
+<method name="useDefaultPrettyPrinter" type="()Lcom/fasterxml/jackson/core/JsonGenerator;"/>
+<method name="setHighestNonEscapedChar" type="(I)Lcom/fasterxml/jackson/core/JsonGenerator;"/>
+<method name="getHighestEscapedChar" type="()I"/>
+<method name="getCharacterEscapes" type="()Lcom/fasterxml/jackson/core/io/CharacterEscapes;"/>
+<method name="setCharacterEscapes" type="(Lcom/fasterxml/jackson/core/io/CharacterEscapes;)Lcom/fasterxml/jackson/core/JsonGenerator;"/>
+<method name="setRootValueSeparator" type="(Lcom/fasterxml/jackson/core/SerializableString;)Lcom/fasterxml/jackson/core/JsonGenerator;"/>
+<method name="writeStartArray" type="()V"/>
+<method name="writeStartArray" type="(I)V"/>
+<method name="writeEndArray" type="()V"/>
+<method name="writeStartObject" type="()V"/>
+<method name="writeEndObject" type="()V"/>
+<method name="writeFieldName" type="(Ljava/lang/String;)V"/>
+<method name="writeFieldName" type="(Lcom/fasterxml/jackson/core/SerializableString;)V"/>
+<method name="writeString" type="(Ljava/lang/String;)V"/>
+<method name="writeString" type="([CII)V"/>
+<method name="writeString" type="(Lcom/fasterxml/jackson/core/SerializableString;)V"/>
+<method name="writeRawUTF8String" type="([BII)V"/>
+<method name="writeUTF8String" type="([BII)V"/>
+<method name="writeRaw" type="(Ljava/lang/String;)V"/>
+<method name="writeRaw" type="(Ljava/lang/String;II)V"/>
+<method name="writeRaw" type="(Lcom/fasterxml/jackson/core/SerializableString;)V"/>
+<method name="writeRaw" type="([CII)V"/>
+<method name="writeRaw" type="(C)V"/>
+<method name="writeRawValue" type="(Ljava/lang/String;)V"/>
+<method name="writeRawValue" type="(Ljava/lang/String;II)V"/>
+<method name="writeRawValue" type="([CII)V"/>
+<method name="writeBinary" type="(Lcom/fasterxml/jackson/core/Base64Variant;[BII)V"/>
+<method name="writeBinary" type="(Lcom/fasterxml/jackson/core/Base64Variant;Ljava/io/InputStream;I)I"/>
+<method name="writeNumber" type="(S)V"/>
+<method name="writeNumber" type="(I)V"/>
+<method name="writeNumber" type="(J)V"/>
+<method name="writeNumber" type="(Ljava/math/BigInteger;)V"/>
+<method name="writeNumber" type="(D)V"/>
+<method name="writeNumber" type="(F)V"/>
+<method name="writeNumber" type="(Ljava/math/BigDecimal;)V"/>
+<method name="writeNumber" type="(Ljava/lang/String;)V"/>
+<method name="writeBoolean" type="(Z)V"/>
+<method name="writeNull" type="()V"/>
+<method name="writeOmittedField" type="(Ljava/lang/String;)V"/>
+<method name="writeObjectId" type="(Ljava/lang/Object;)V"/>
+<method name="writeObjectRef" type="(Ljava/lang/Object;)V"/>
+<method name="writeTypeId" type="(Ljava/lang/Object;)V"/>
+<method name="writeObject" type="(Ljava/lang/Object;)V"/>
+<method name="writeTree" type="(Lcom/fasterxml/jackson/core/TreeNode;)V"/>
+<method name="copyCurrentEvent" type="(Lcom/fasterxml/jackson/core/JsonParser;)V"/>
+<method name="copyCurrentStructure" type="(Lcom/fasterxml/jackson/core/JsonParser;)V"/>
+<method name="getOutputContext" type="()Lcom/fasterxml/jackson/core/JsonStreamContext;"/>
+<method name="flush" type="()V"/>
+<method name="close" type="()V"/>
+<method name="isClosed" type="()Z"/>
+</class>
+<class name="com/fasterxml/jackson/core/util/JsonParserDelegate" super="com/fasterxml/jackson/core/JsonParser">
+<method name="&lt;init&gt;" type="(Lcom/fasterxml/jackson/core/JsonParser;)V"/>
+<method name="getCurrentValue" type="()Ljava/lang/Object;"/>
+<method name="setCurrentValue" type="(Ljava/lang/Object;)V"/>
+<method name="setCodec" type="(Lcom/fasterxml/jackson/core/ObjectCodec;)V"/>
+<method name="getCodec" type="()Lcom/fasterxml/jackson/core/ObjectCodec;"/>
+<method name="enable" type="(Lcom/fasterxml/jackson/core/JsonParser$Feature;)Lcom/fasterxml/jackson/core/JsonParser;"/>
+<method name="disable" type="(Lcom/fasterxml/jackson/core/JsonParser$Feature;)Lcom/fasterxml/jackson/core/JsonParser;"/>
+<method name="isEnabled" type="(Lcom/fasterxml/jackson/core/JsonParser$Feature;)Z"/>
+<method name="getFeatureMask" type="()I"/>
+<method name="setFeatureMask" type="(I)Lcom/fasterxml/jackson/core/JsonParser;"/>
+<method name="getSchema" type="()Lcom/fasterxml/jackson/core/FormatSchema;"/>
+<method name="setSchema" type="(Lcom/fasterxml/jackson/core/FormatSchema;)V"/>
+<method name="canUseSchema" type="(Lcom/fasterxml/jackson/core/FormatSchema;)Z"/>
+<method name="version" type="()Lcom/fasterxml/jackson/core/Version;"/>
+<method name="getInputSource" type="()Ljava/lang/Object;"/>
+<method name="requiresCustomCodec" type="()Z"/>
+<method name="close" type="()V"/>
+<method name="isClosed" type="()Z"/>
+<method name="getCurrentToken" type="()Lcom/fasterxml/jackson/core/JsonToken;"/>
+<method name="getCurrentTokenId" type="()I"/>
+<method name="hasCurrentToken" type="()Z"/>
+<method name="hasTokenId" type="(I)Z"/>
+<method name="hasToken" type="(Lcom/fasterxml/jackson/core/JsonToken;)Z"/>
+<method name="getCurrentName" type="()Ljava/lang/String;"/>
+<method name="getCurrentLocation" type="()Lcom/fasterxml/jackson/core/JsonLocation;"/>
+<method name="getParsingContext" type="()Lcom/fasterxml/jackson/core/JsonStreamContext;"/>
+<method name="isExpectedStartArrayToken" type="()Z"/>
+<method name="isExpectedStartObjectToken" type="()Z"/>
+<method name="clearCurrentToken" type="()V"/>
+<method name="getLastClearedToken" type="()Lcom/fasterxml/jackson/core/JsonToken;"/>
+<method name="overrideCurrentName" type="(Ljava/lang/String;)V"/>
+<method name="getText" type="()Ljava/lang/String;"/>
+<method name="hasTextCharacters" type="()Z"/>
+<method name="getTextCharacters" type="()[C"/>
+<method name="getTextLength" type="()I"/>
+<method name="getTextOffset" type="()I"/>
+<method name="getBigIntegerValue" type="()Ljava/math/BigInteger;"/>
+<method name="getBooleanValue" type="()Z"/>
+<method name="getByteValue" type="()B"/>
+<method name="getShortValue" type="()S"/>
+<method name="getDecimalValue" type="()Ljava/math/BigDecimal;"/>
+<method name="getDoubleValue" type="()D"/>
+<method name="getFloatValue" type="()F"/>
+<method name="getIntValue" type="()I"/>
+<method name="getLongValue" type="()J"/>
+<method name="getNumberType" type="()Lcom/fasterxml/jackson/core/JsonParser$NumberType;"/>
+<method name="getNumberValue" type="()Ljava/lang/Number;"/>
+<method name="getValueAsInt" type="()I"/>
+<method name="getValueAsInt" type="(I)I"/>
+<method name="getValueAsLong" type="()J"/>
+<method name="getValueAsLong" type="(J)J"/>
+<method name="getValueAsDouble" type="()D"/>
+<method name="getValueAsDouble" type="(D)D"/>
+<method name="getValueAsBoolean" type="()Z"/>
+<method name="getValueAsBoolean" type="(Z)Z"/>
+<method name="getValueAsString" type="()Ljava/lang/String;"/>
+<method name="getValueAsString" type="(Ljava/lang/String;)Ljava/lang/String;"/>
+<method name="getEmbeddedObject" type="()Ljava/lang/Object;"/>
+<method name="getBinaryValue" type="(Lcom/fasterxml/jackson/core/Base64Variant;)[B"/>
+<method name="readBinaryValue" type="(Lcom/fasterxml/jackson/core/Base64Variant;Ljava/io/OutputStream;)I"/>
+<method name="getTokenLocation" type="()Lcom/fasterxml/jackson/core/JsonLocation;"/>
+<method name="nextToken" type="()Lcom/fasterxml/jackson/core/JsonToken;"/>
+<method name="nextValue" type="()Lcom/fasterxml/jackson/core/JsonToken;"/>
+<method name="skipChildren" type="()Lcom/fasterxml/jackson/core/JsonParser;"/>
+<method name="canReadObjectId" type="()Z"/>
+<method name="canReadTypeId" type="()Z"/>
+<method name="getObjectId" type="()Ljava/lang/Object;"/>
+<method name="getTypeId" type="()Ljava/lang/Object;"/>
+</class>
+<class name="com/fasterxml/jackson/core/util/JsonParserSequence" super="com/fasterxml/jackson/core/util/JsonParserDelegate">
+<method name="&lt;init&gt;" type="([Lcom/fasterxml/jackson/core/JsonParser;)V"/>
+<method name="createFlattened" type="(Lcom/fasterxml/jackson/core/JsonParser;Lcom/fasterxml/jackson/core/JsonParser;)Lcom/fasterxml/jackson/core/util/JsonParserSequence;" class_method="true"/>
+<method name="addFlattenedActiveParsers" type="(Ljava/util/List;)V"/>
+<method name="close" type="()V"/>
+<method name="nextToken" type="()Lcom/fasterxml/jackson/core/JsonToken;"/>
+<method name="containedParsersCount" type="()I"/>
+<method name="switchToNext" type="()Z"/>
+</class>
+<class name="com/fasterxml/jackson/core/util/TextBuffer" super="java/lang/Object">
+<method name="&lt;init&gt;" type="(Lcom/fasterxml/jackson/core/util/BufferRecycler;)V"/>
+<method name="releaseBuffers" type="()V"/>
+<method name="resetWithEmpty" type="()V"/>
+<method name="resetWithShared" type="([CII)V"/>
+<method name="resetWithCopy" type="([CII)V"/>
+<method name="resetWithString" type="(Ljava/lang/String;)V"/>
+<method name="size" type="()I"/>
+<method name="getTextOffset" type="()I"/>
+<method name="hasTextAsCharacters" type="()Z"/>
+<method name="getTextBuffer" type="()[C"/>
+<method name="contentsAsString" type="()Ljava/lang/String;"/>
+<method name="contentsAsArray" type="()[C"/>
+<method name="contentsAsDecimal" type="()Ljava/math/BigDecimal;"/>
+<method name="contentsAsDouble" type="()D"/>
+<method name="ensureNotShared" type="()V"/>
+<method name="append" type="(C)V"/>
+<method name="append" type="([CII)V"/>
+<method name="append" type="(Ljava/lang/String;II)V"/>
+<method name="getCurrentSegment" type="()[C"/>
+<method name="emptyAndGetCurrentSegment" type="()[C"/>
+<method name="getCurrentSegmentSize" type="()I"/>
+<method name="setCurrentLength" type="(I)V"/>
+<method name="setCurrentAndReturn" type="(I)Ljava/lang/String;"/>
+<method name="finishCurrentSegment" type="()[C"/>
+<method name="expandCurrentSegment" type="()[C"/>
+<method name="expandCurrentSegment" type="(I)[C"/>
+<method name="toString" type="()Ljava/lang/String;"/>
+</class>
+<class name="com/fasterxml/jackson/core/util/VersionUtil" super="java/lang/Object">
+<method name="&lt;init&gt;" type="()V"/>
+<method name="version" type="()Lcom/fasterxml/jackson/core/Version;"/>
+<method name="versionFor" type="(Ljava/lang/Class;)Lcom/fasterxml/jackson/core/Version;" class_method="true"/>
+<method name="packageVersionFor" type="(Ljava/lang/Class;)Lcom/fasterxml/jackson/core/Version;" class_method="true"/>
+<method name="mavenVersionFor" type="(Ljava/lang/ClassLoader;Ljava/lang/String;Ljava/lang/String;)Lcom/fasterxml/jackson/core/Version;" class_method="true"/>
+<method name="parseVersion" type="(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lcom/fasterxml/jackson/core/Version;" class_method="true"/>
+<method name="parseVersionPart" type="(Ljava/lang/String;)I" class_method="true"/>
+<method name="throwInternal" type="()V" class_method="true"/>
+</class>
+<class name="com/fasterxml/jackson/core/Base64Variant" super="java/lang/Object">
+<method name="&lt;init&gt;" type="(Ljava/lang/String;Ljava/lang/String;ZCI)V"/>
+<method name="&lt;init&gt;" type="(Lcom/fasterxml/jackson/core/Base64Variant;Ljava/lang/String;I)V"/>
+<method name="&lt;init&gt;" type="(Lcom/fasterxml/jackson/core/Base64Variant;Ljava/lang/String;ZCI)V"/>
+<method name="readResolve" type="()Ljava/lang/Object;"/>
+<method name="getName" type="()Ljava/lang/String;"/>
+<method name="usesPadding" type="()Z"/>
+<method name="usesPaddingChar" type="(C)Z"/>
+<method name="usesPaddingChar" type="(I)Z"/>
+<method name="getPaddingChar" type="()C"/>
+<method name="getPaddingByte" type="()B"/>
+<method name="getMaxLineLength" type="()I"/>
+<method name="decodeBase64Char" type="(C)I"/>
+<method name="decodeBase64Char" type="(I)I"/>
+<method name="decodeBase64Byte" type="(B)I"/>
+<method name="encodeBase64BitsAsChar" type="(I)C"/>
+<method name="encodeBase64Chunk" type="(I[CI)I"/>
+<method name="encodeBase64Chunk" type="(Ljava/lang/StringBuilder;I)V"/>
+<method name="encodeBase64Partial" type="(II[CI)I"/>
+<method name="encodeBase64Partial" type="(Ljava/lang/StringBuilder;II)V"/>
+<method name="encodeBase64BitsAsByte" type="(I)B"/>
+<method name="encodeBase64Chunk" type="(I[BI)I"/>
+<method name="encodeBase64Partial" type="(II[BI)I"/>
+<method name="encode" type="([B)Ljava/lang/String;"/>
+<method name="encode" type="([BZ)Ljava/lang/String;"/>
+<method name="decode" type="(Ljava/lang/String;)[B"/>
+<method name="decode" type="(Ljava/lang/String;Lcom/fasterxml/jackson/core/util/ByteArrayBuilder;)V"/>
+<method name="toString" type="()Ljava/lang/String;"/>
+<method name="equals" type="(Ljava/lang/Object;)Z"/>
+<method name="hashCode" type="()I"/>
+<method name="_reportInvalidBase64" type="(CILjava/lang/String;)V"/>
+<method name="_reportBase64EOF" type="()V"/>
+</class>
+<class name="com/fasterxml/jackson/core/format/InputAccessor$Std" super="java/lang/Object">
+<method name="&lt;init&gt;" type="(Ljava/io/InputStream;[B)V"/>
+<method name="&lt;init&gt;" type="([B)V"/>
+<method name="&lt;init&gt;" type="([BII)V"/>
+<method name="hasMoreBytes" type="()Z"/>
+<method name="nextByte" type="()B"/>
+<method name="reset" type="()V"/>
+<method name="createMatcher" type="(Lcom/fasterxml/jackson/core/JsonFactory;Lcom/fasterxml/jackson/core/format/MatchStrength;)Lcom/fasterxml/jackson/core/format/DataFormatMatcher;"/>
+</class>
+<class name="com/fasterxml/jackson/core/io/CharacterEscapes" super="java/lang/Object">
+<method name="&lt;init&gt;" type="()V"/>
+<method name="getEscapeCodesForAscii" type="()[I"/>
+<method name="getEscapeSequence" type="(I)Lcom/fasterxml/jackson/core/SerializableString;"/>
+<method name="standardAsciiEscapesForJSON" type="()[I" class_method="true"/>
+</class>
+<class name="com/fasterxml/jackson/core/io/InputDecorator" super="java/lang/Object">
+<method name="&lt;init&gt;" type="()V"/>
+<method name="decorate" type="(Lcom/fasterxml/jackson/core/io/IOContext;Ljava/io/InputStream;)Ljava/io/InputStream;"/>
+<method name="decorate" type="(Lcom/fasterxml/jackson/core/io/IOContext;[BII)Ljava/io/InputStream;"/>
+<method name="decorate" type="(Lcom/fasterxml/jackson/core/io/IOContext;Ljava/io/Reader;)Ljava/io/Reader;"/>
+</class>
+<class name="com/fasterxml/jackson/core/io/OutputDecorator" super="java/lang/Object">
+<method name="&lt;init&gt;" type="()V"/>
+<method name="decorate" type="(Lcom/fasterxml/jackson/core/io/IOContext;Ljava/io/OutputStream;)Ljava/io/OutputStream;"/>
+<method name="decorate" type="(Lcom/fasterxml/jackson/core/io/IOContext;Ljava/io/Writer;)Ljava/io/Writer;"/>
+</class>
+<class name="com/fasterxml/jackson/core/io/SerializedString" super="java/lang/Object">
+<method name="&lt;init&gt;" type="(Ljava/lang/String;)V"/>
+<method name="readResolve" type="()Ljava/lang/Object;"/>
+<method name="getValue" type="()Ljava/lang/String;"/>
+<method name="charLength" type="()I"/>
+<method name="asQuotedChars" type="()[C"/>
+<method name="asUnquotedUTF8" type="()[B"/>
+<method name="asQuotedUTF8" type="()[B"/>
+<method name="appendQuotedUTF8" type="([BI)I"/>
+<method name="appendQuoted" type="([CI)I"/>
+<method name="appendUnquotedUTF8" type="([BI)I"/>
+<method name="appendUnquoted" type="([CI)I"/>
+<method name="writeQuotedUTF8" type="(Ljava/io/OutputStream;)I"/>
+<method name="writeUnquotedUTF8" type="(Ljava/io/OutputStream;)I"/>
+<method name="putQuotedUTF8" type="(Ljava/nio/ByteBuffer;)I"/>
+<method name="putUnquotedUTF8" type="(Ljava/nio/ByteBuffer;)I"/>
+<method name="toString" type="()Ljava/lang/String;"/>
+<method name="hashCode" type="()I"/>
+<method name="equals" type="(Ljava/lang/Object;)Z"/>
+</class>
+<class name="com/fasterxml/jackson/core/json/PackageVersion" super="java/lang/Object">
+<method name="&lt;init&gt;" type="()V"/>
+<method name="version" type="()Lcom/fasterxml/jackson/core/Version;"/>
+</class>
+<class name="com/fasterxml/jackson/core/JsonFactory" super="java/lang/Object">
+<method name="&lt;init&gt;" type="()V"/>
+<method name="&lt;init&gt;" type="(Lcom/fasterxml/jackson/core/ObjectCodec;)V"/>
+<method name="&lt;init&gt;" type="(Lcom/fasterxml/jackson/core/JsonFactory;Lcom/fasterxml/jackson/core/ObjectCodec;)V"/>
+<method name="copy" type="()Lcom/fasterxml/jackson/core/JsonFactory;"/>
+<method name="_checkInvalidCopy" type="(Ljava/lang/Class;)V"/>
+<method name="readResolve" type="()Ljava/lang/Object;"/>
+<method name="requiresPropertyOrdering" type="()Z"/>
+<method name="canHandleBinaryNatively" type="()Z"/>
+<method name="canUseCharArrays" type="()Z"/>
+<method name="getFormatReadFeatureType" type="()Ljava/lang/Class;"/>
+<method name="getFormatWriteFeatureType" type="()Ljava/lang/Class;"/>
+<method name="canUseSchema" type="(Lcom/fasterxml/jackson/core/FormatSchema;)Z"/>
+<method name="getFormatName" type="()Ljava/lang/String;"/>
+<method name="hasFormat" type="(Lcom/fasterxml/jackson/core/format/InputAccessor;)Lcom/fasterxml/jackson/core/format/MatchStrength;"/>
+<method name="requiresCustomCodec" type="()Z"/>
+<method name="hasJSONFormat" type="(Lcom/fasterxml/jackson/core/format/InputAccessor;)Lcom/fasterxml/jackson/core/format/MatchStrength;"/>
+<method name="version" type="()Lcom/fasterxml/jackson/core/Version;"/>
+<method name="configure" type="(Lcom/fasterxml/jackson/core/JsonFactory$Feature;Z)Lcom/fasterxml/jackson/core/JsonFactory;"/>
+<method name="enable" type="(Lcom/fasterxml/jackson/core/JsonFactory$Feature;)Lcom/fasterxml/jackson/core/JsonFactory;"/>
+<method name="disable" type="(Lcom/fasterxml/jackson/core/JsonFactory$Feature;)Lcom/fasterxml/jackson/core/JsonFactory;"/>
+<method name="isEnabled" type="(Lcom/fasterxml/jackson/core/JsonFactory$Feature;)Z"/>
+<method name="configure" type="(Lcom/fasterxml/jackson/core/JsonParser$Feature;Z)Lcom/fasterxml/jackson/core/JsonFactory;"/>
+<method name="enable" type="(Lcom/fasterxml/jackson/core/JsonParser$Feature;)Lcom/fasterxml/jackson/core/JsonFactory;"/>
+<method name="disable" type="(Lcom/fasterxml/jackson/core/JsonParser$Feature;)Lcom/fasterxml/jackson/core/JsonFactory;"/>
+<method name="isEnabled" type="(Lcom/fasterxml/jackson/core/JsonParser$Feature;)Z"/>
+<method name="getInputDecorator" type="()Lcom/fasterxml/jackson/core/io/InputDecorator;"/>
+<method name="setInputDecorator" type="(Lcom/fasterxml/jackson/core/io/InputDecorator;)Lcom/fasterxml/jackson/core/JsonFactory;"/>
+<method name="configure" type="(Lcom/fasterxml/jackson/core/JsonGenerator$Feature;Z)Lcom/fasterxml/jackson/core/JsonFactory;"/>
+<method name="enable" type="(Lcom/fasterxml/jackson/core/JsonGenerator$Feature;)Lcom/fasterxml/jackson/core/JsonFactory;"/>
+<method name="disable" type="(Lcom/fasterxml/jackson/core/JsonGenerator$Feature;)Lcom/fasterxml/jackson/core/JsonFactory;"/>
+<method name="isEnabled" type="(Lcom/fasterxml/jackson/core/JsonGenerator$Feature;)Z"/>
+<method name="getCharacterEscapes" type="()Lcom/fasterxml/jackson/core/io/CharacterEscapes;"/>
+<method name="setCharacterEscapes" type="(Lcom/fasterxml/jackson/core/io/CharacterEscapes;)Lcom/fasterxml/jackson/core/JsonFactory;"/>
+<method name="getOutputDecorator" type="()Lcom/fasterxml/jackson/core/io/OutputDecorator;"/>
+<method name="setOutputDecorator" type="(Lcom/fasterxml/jackson/core/io/OutputDecorator;)Lcom/fasterxml/jackson/core/JsonFactory;"/>
+<method name="setRootValueSeparator" type="(Ljava/lang/String;)Lcom/fasterxml/jackson/core/JsonFactory;"/>
+<method name="getRootValueSeparator" type="()Ljava/lang/String;"/>
+<method name="setCodec" type="(Lcom/fasterxml/jackson/core/ObjectCodec;)Lcom/fasterxml/jackson/core/JsonFactory;"/>
+<method name="getCodec" type="()Lcom/fasterxml/jackson/core/ObjectCodec;"/>
+<method name="createParser" type="(Ljava/io/File;)Lcom/fasterxml/jackson/core/JsonParser;"/>
+<method name="createParser" type="(Ljava/net/URL;)Lcom/fasterxml/jackson/core/JsonParser;"/>
+<method name="createParser" type="(Ljava/io/InputStream;)Lcom/fasterxml/jackson/core/JsonParser;"/>
+<method name="createParser" type="(Ljava/io/Reader;)Lcom/fasterxml/jackson/core/JsonParser;"/>
+<method name="createParser" type="([B)Lcom/fasterxml/jackson/core/JsonParser;"/>
+<method name="createParser" type="([BII)Lcom/fasterxml/jackson/core/JsonParser;"/>
+<method name="createParser" type="(Ljava/lang/String;)Lcom/fasterxml/jackson/core/JsonParser;"/>
+<method name="createParser" type="([C)Lcom/fasterxml/jackson/core/JsonParser;"/>
+<method name="createParser" type="([CII)Lcom/fasterxml/jackson/core/JsonParser;"/>
+<method name="createJsonParser" type="(Ljava/io/File;)Lcom/fasterxml/jackson/core/JsonParser;"/>
+<method name="createJsonParser" type="(Ljava/net/URL;)Lcom/fasterxml/jackson/core/JsonParser;"/>
+<method name="createJsonParser" type="(Ljava/io/InputStream;)Lcom/fasterxml/jackson/core/JsonParser;"/>
+<method name="createJsonParser" type="(Ljava/io/Reader;)Lcom/fasterxml/jackson/core/JsonParser;"/>
+<method name="createJsonParser" type="([B)Lcom/fasterxml/jackson/core/JsonParser;"/>
+<method name="createJsonParser" type="([BII)Lcom/fasterxml/jackson/core/JsonParser;"/>
+<method name="createJsonParser" type="(Ljava/lang/String;)Lcom/fasterxml/jackson/core/JsonParser;"/>
+<method name="createGenerator" type="(Ljava/io/OutputStream;Lcom/fasterxml/jackson/core/JsonEncoding;)Lcom/fasterxml/jackson/core/JsonGenerator;"/>
+<method name="createGenerator" type="(Ljava/io/OutputStream;)Lcom/fasterxml/jackson/core/JsonGenerator;"/>
+<method name="createGenerator" type="(Ljava/io/Writer;)Lcom/fasterxml/jackson/core/JsonGenerator;"/>
+<method name="createGenerator" type="(Ljava/io/File;Lcom/fasterxml/jackson/core/JsonEncoding;)Lcom/fasterxml/jackson/core/JsonGenerator;"/>
+<method name="createJsonGenerator" type="(Ljava/io/OutputStream;Lcom/fasterxml/jackson/core/JsonEncoding;)Lcom/fasterxml/jackson/core/JsonGenerator;"/>
+<method name="createJsonGenerator" type="(Ljava/io/Writer;)Lcom/fasterxml/jackson/core/JsonGenerator;"/>
+<method name="createJsonGenerator" type="(Ljava/io/OutputStream;)Lcom/fasterxml/jackson/core/JsonGenerator;"/>
+<method name="createJsonGenerator" type="(Ljava/io/File;Lcom/fasterxml/jackson/core/JsonEncoding;)Lcom/fasterxml/jackson/core/JsonGenerator;"/>
+<method name="_createParser" type="(Ljava/io/InputStream;Lcom/fasterxml/jackson/core/io/IOContext;)Lcom/fasterxml/jackson/core/JsonParser;"/>
+<method name="_createParser" type="(Ljava/io/Reader;Lcom/fasterxml/jackson/core/io/IOContext;)Lcom/fasterxml/jackson/core/JsonParser;"/>
+<method name="_createParser" type="([CIILcom/fasterxml/jackson/core/io/IOContext;Z)Lcom/fasterxml/jackson/core/JsonParser;"/>
+<method name="_createParser" type="([BIILcom/fasterxml/jackson/core/io/IOContext;)Lcom/fasterxml/jackson/core/JsonParser;"/>
+<method name="_createGenerator" type="(Ljava/io/Writer;Lcom/fasterxml/jackson/core/io/IOContext;)Lcom/fasterxml/jackson/core/JsonGenerator;"/>
+<method name="_createUTF8Generator" type="(Ljava/io/OutputStream;Lcom/fasterxml/jackson/core/io/IOContext;)Lcom/fasterxml/jackson/core/JsonGenerator;"/>
+<method name="_createWriter" type="(Ljava/io/OutputStream;Lcom/fasterxml/jackson/core/JsonEncoding;Lcom/fasterxml/jackson/core/io/IOContext;)Ljava/io/Writer;"/>
+<method name="_decorate" type="(Ljava/io/InputStream;Lcom/fasterxml/jackson/core/io/IOContext;)Ljava/io/InputStream;"/>
+<method name="_decorate" type="(Ljava/io/Reader;Lcom/fasterxml/jackson/core/io/IOContext;)Ljava/io/Reader;"/>
+<method name="_decorate" type="(Ljava/io/OutputStream;Lcom/fasterxml/jackson/core/io/IOContext;)Ljava/io/OutputStream;"/>
+<method name="_decorate" type="(Ljava/io/Writer;Lcom/fasterxml/jackson/core/io/IOContext;)Ljava/io/Writer;"/>
+<method name="_getBufferRecycler" type="()Lcom/fasterxml/jackson/core/util/BufferRecycler;"/>
+<method name="_createContext" type="(Ljava/lang/Object;Z)Lcom/fasterxml/jackson/core/io/IOContext;"/>
+<method name="_optimizedStreamFromURL" type="(Ljava/net/URL;)Ljava/io/InputStream;"/>
+</class>
+<class name="com/fasterxml/jackson/core/JsonGenerator" super="java/lang/Object">
+<method name="&lt;init&gt;" type="()V"/>
+<method name="setCodec" type="(Lcom/fasterxml/jackson/core/ObjectCodec;)Lcom/fasterxml/jackson/core/JsonGenerator;"/>
+<method name="getCodec" type="()Lcom/fasterxml/jackson/core/ObjectCodec;"/>
+<method name="version" type="()Lcom/fasterxml/jackson/core/Version;"/>
+<method name="enable" type="(Lcom/fasterxml/jackson/core/JsonGenerator$Feature;)Lcom/fasterxml/jackson/core/JsonGenerator;"/>
+<method name="disable" type="(Lcom/fasterxml/jackson/core/JsonGenerator$Feature;)Lcom/fasterxml/jackson/core/JsonGenerator;"/>
+<method name="configure" type="(Lcom/fasterxml/jackson/core/JsonGenerator$Feature;Z)Lcom/fasterxml/jackson/core/JsonGenerator;"/>
+<method name="isEnabled" type="(Lcom/fasterxml/jackson/core/JsonGenerator$Feature;)Z"/>
+<method name="getFeatureMask" type="()I"/>
+<method name="setFeatureMask" type="(I)Lcom/fasterxml/jackson/core/JsonGenerator;"/>
+<method name="overrideStdFeatures" type="(II)Lcom/fasterxml/jackson/core/JsonGenerator;"/>
+<method name="getFormatFeatures" type="()I"/>
+<method name="overrideFormatFeatures" type="(II)Lcom/fasterxml/jackson/core/JsonGenerator;"/>
+<method name="setSchema" type="(Lcom/fasterxml/jackson/core/FormatSchema;)V"/>
+<method name="getSchema" type="()Lcom/fasterxml/jackson/core/FormatSchema;"/>
+<method name="setPrettyPrinter" type="(Lcom/fasterxml/jackson/core/PrettyPrinter;)Lcom/fasterxml/jackson/core/JsonGenerator;"/>
+<method name="getPrettyPrinter" type="()Lcom/fasterxml/jackson/core/PrettyPrinter;"/>
+<method name="useDefaultPrettyPrinter" type="()Lcom/fasterxml/jackson/core/JsonGenerator;"/>
+<method name="setHighestNonEscapedChar" type="(I)Lcom/fasterxml/jackson/core/JsonGenerator;"/>
+<method name="getHighestEscapedChar" type="()I"/>
+<method name="getCharacterEscapes" type="()Lcom/fasterxml/jackson/core/io/CharacterEscapes;"/>
+<method name="setCharacterEscapes" type="(Lcom/fasterxml/jackson/core/io/CharacterEscapes;)Lcom/fasterxml/jackson/core/JsonGenerator;"/>
+<method name="setRootValueSeparator" type="(Lcom/fasterxml/jackson/core/SerializableString;)Lcom/fasterxml/jackson/core/JsonGenerator;"/>
+<method name="getOutputTarget" type="()Ljava/lang/Object;"/>
+<method name="getOutputBuffered" type="()I"/>
+<method name="getCurrentValue" type="()Ljava/lang/Object;"/>
+<method name="setCurrentValue" type="(Ljava/lang/Object;)V"/>
+<method name="canUseSchema" type="(Lcom/fasterxml/jackson/core/FormatSchema;)Z"/>
+<method name="canWriteObjectId" type="()Z"/>
+<method name="canWriteTypeId" type="()Z"/>
+<method name="canWriteBinaryNatively" type="()Z"/>
+<method name="canOmitFields" type="()Z"/>
+<method name="writeStartArray" type="()V"/>
+<method name="writeStartArray" type="(I)V"/>
+<method name="writeEndArray" type="()V"/>
+<method name="writeStartObject" type="()V"/>
+<method name="writeEndObject" type="()V"/>
+<method name="writeFieldName" type="(Ljava/lang/String;)V"/>
+<method name="writeFieldName" type="(Lcom/fasterxml/jackson/core/SerializableString;)V"/>
+<method name="writeString" type="(Ljava/lang/String;)V"/>
+<method name="writeString" type="([CII)V"/>
+<method name="writeString" type="(Lcom/fasterxml/jackson/core/SerializableString;)V"/>
+<method name="writeRawUTF8String" type="([BII)V"/>
+<method name="writeUTF8String" type="([BII)V"/>
+<method name="writeRaw" type="(Ljava/lang/String;)V"/>
+<method name="writeRaw" type="(Ljava/lang/String;II)V"/>
+<method name="writeRaw" type="([CII)V"/>
+<method name="writeRaw" type="(C)V"/>
+<method name="writeRaw" type="(Lcom/fasterxml/jackson/core/SerializableString;)V"/>
+<method name="writeRawValue" type="(Ljava/lang/String;)V"/>
+<method name="writeRawValue" type="(Ljava/lang/String;II)V"/>
+<method name="writeRawValue" type="([CII)V"/>
+<method name="writeRawValue" type="(Lcom/fasterxml/jackson/core/SerializableString;)V"/>
+<method name="writeBinary" type="(Lcom/fasterxml/jackson/core/Base64Variant;[BII)V"/>
+<method name="writeBinary" type="([BII)V"/>
+<method name="writeBinary" type="([B)V"/>
+<method name="writeBinary" type="(Ljava/io/InputStream;I)I"/>
+<method name="writeBinary" type="(Lcom/fasterxml/jackson/core/Base64Variant;Ljava/io/InputStream;I)I"/>
+<method name="writeNumber" type="(S)V"/>
+<method name="writeNumber" type="(I)V"/>
+<method name="writeNumber" type="(J)V"/>
+<method name="writeNumber" type="(Ljava/math/BigInteger;)V"/>
+<method name="writeNumber" type="(D)V"/>
+<method name="writeNumber" type="(F)V"/>
+<method name="writeNumber" type="(Ljava/math/BigDecimal;)V"/>
+<method name="writeNumber" type="(Ljava/lang/String;)V"/>
+<method name="writeBoolean" type="(Z)V"/>
+<method name="writeNull" type="()V"/>
+<method name="writeObjectId" type="(Ljava/lang/Object;)V"/>
+<method name="writeObjectRef" type="(Ljava/lang/Object;)V"/>
+<method name="writeTypeId" type="(Ljava/lang/Object;)V"/>
+<method name="writeObject" type="(Ljava/lang/Object;)V"/>
+<method name="writeTree" type="(Lcom/fasterxml/jackson/core/TreeNode;)V"/>
+<method name="writeStringField" type="(Ljava/lang/String;Ljava/lang/String;)V"/>
+<method name="writeBooleanField" type="(Ljava/lang/String;Z)V"/>
+<method name="writeNullField" type="(Ljava/lang/String;)V"/>
+<method name="writeNumberField" type="(Ljava/lang/String;I)V"/>
+<method name="writeNumberField" type="(Ljava/lang/String;J)V"/>
+<method name="writeNumberField" type="(Ljava/lang/String;D)V"/>
+<method name="writeNumberField" type="(Ljava/lang/String;F)V"/>
+<method name="writeNumberField" type="(Ljava/lang/String;Ljava/math/BigDecimal;)V"/>
+<method name="writeBinaryField" type="(Ljava/lang/String;[B)V"/>
+<method name="writeArrayFieldStart" type="(Ljava/lang/String;)V"/>
+<method name="writeObjectFieldStart" type="(Ljava/lang/String;)V"/>
+<method name="writeObjectField" type="(Ljava/lang/String;Ljava/lang/Object;)V"/>
+<method name="writeOmittedField" type="(Ljava/lang/String;)V"/>
+<method name="copyCurrentEvent" type="(Lcom/fasterxml/jackson/core/JsonParser;)V"/>
+<method name="copyCurrentStructure" type="(Lcom/fasterxml/jackson/core/JsonParser;)V"/>
+<method name="getOutputContext" type="()Lcom/fasterxml/jackson/core/JsonStreamContext;"/>
+<method name="flush" type="()V"/>
+<method name="isClosed" type="()Z"/>
+<method name="close" type="()V"/>
+<method name="_reportError" type="(Ljava/lang/String;)V"/>
+<method name="_throwInternal" type="()V"/>
+<method name="_reportUnsupportedOperation" type="()V"/>
+<method name="_writeSimpleObject" type="(Ljava/lang/Object;)V"/>
+</class>
+<class name="com/fasterxml/jackson/core/JsonLocation" super="java/lang/Object">
+<method name="&lt;init&gt;" type="(Ljava/lang/Object;JII)V"/>
+<method name="&lt;init&gt;" type="(Ljava/lang/Object;JJII)V"/>
+<method name="getSourceRef" type="()Ljava/lang/Object;"/>
+<method name="getLineNr" type="()I"/>
+<method name="getColumnNr" type="()I"/>
+<method name="getCharOffset" type="()J"/>
+<method name="getByteOffset" type="()J"/>
+<method name="toString" type="()Ljava/lang/String;"/>
+<method name="hashCode" type="()I"/>
+<method name="equals" type="(Ljava/lang/Object;)Z"/>
+</class>
+<class name="com/fasterxml/jackson/core/JsonParser" super="java/lang/Object">
+<method name="&lt;init&gt;" type="()V"/>
+<method name="&lt;init&gt;" type="(I)V"/>
+<method name="getCodec" type="()Lcom/fasterxml/jackson/core/ObjectCodec;"/>
+<method name="setCodec" type="(Lcom/fasterxml/jackson/core/ObjectCodec;)V"/>
+<method name="getInputSource" type="()Ljava/lang/Object;"/>
+<method name="getCurrentValue" type="()Ljava/lang/Object;"/>
+<method name="setCurrentValue" type="(Ljava/lang/Object;)V"/>
+<method name="setSchema" type="(Lcom/fasterxml/jackson/core/FormatSchema;)V"/>
+<method name="getSchema" type="()Lcom/fasterxml/jackson/core/FormatSchema;"/>
+<method name="canUseSchema" type="(Lcom/fasterxml/jackson/core/FormatSchema;)Z"/>
+<method name="requiresCustomCodec" type="()Z"/>
+<method name="version" type="()Lcom/fasterxml/jackson/core/Version;"/>
+<method name="close" type="()V"/>
+<method name="releaseBuffered" type="(Ljava/io/OutputStream;)I"/>
+<method name="releaseBuffered" type="(Ljava/io/Writer;)I"/>
+<method name="enable" type="(Lcom/fasterxml/jackson/core/JsonParser$Feature;)Lcom/fasterxml/jackson/core/JsonParser;"/>
+<method name="disable" type="(Lcom/fasterxml/jackson/core/JsonParser$Feature;)Lcom/fasterxml/jackson/core/JsonParser;"/>
+<method name="configure" type="(Lcom/fasterxml/jackson/core/JsonParser$Feature;Z)Lcom/fasterxml/jackson/core/JsonParser;"/>
+<method name="isEnabled" type="(Lcom/fasterxml/jackson/core/JsonParser$Feature;)Z"/>
+<method name="getFeatureMask" type="()I"/>
+<method name="setFeatureMask" type="(I)Lcom/fasterxml/jackson/core/JsonParser;"/>
+<method name="overrideStdFeatures" type="(II)Lcom/fasterxml/jackson/core/JsonParser;"/>
+<method name="getFormatFeatures" type="()I"/>
+<method name="overrideFormatFeatures" type="(II)Lcom/fasterxml/jackson/core/JsonParser;"/>
+<method name="nextToken" type="()Lcom/fasterxml/jackson/core/JsonToken;"/>
+<method name="nextValue" type="()Lcom/fasterxml/jackson/core/JsonToken;"/>
+<method name="nextFieldName" type="(Lcom/fasterxml/jackson/core/SerializableString;)Z"/>
+<method name="nextFieldName" type="()Ljava/lang/String;"/>
+<method name="nextTextValue" type="()Ljava/lang/String;"/>
+<method name="nextIntValue" type="(I)I"/>
+<method name="nextLongValue" type="(J)J"/>
+<method name="nextBooleanValue" type="()Ljava/lang/Boolean;"/>
+<method name="skipChildren" type="()Lcom/fasterxml/jackson/core/JsonParser;"/>
+<method name="isClosed" type="()Z"/>
+<method name="getCurrentToken" type="()Lcom/fasterxml/jackson/core/JsonToken;"/>
+<method name="getCurrentTokenId" type="()I"/>
+<method name="hasCurrentToken" type="()Z"/>
+<method name="hasTokenId" type="(I)Z"/>
+<method name="hasToken" type="(Lcom/fasterxml/jackson/core/JsonToken;)Z"/>
+<method name="getCurrentName" type="()Ljava/lang/String;"/>
+<method name="getParsingContext" type="()Lcom/fasterxml/jackson/core/JsonStreamContext;"/>
+<method name="getTokenLocation" type="()Lcom/fasterxml/jackson/core/JsonLocation;"/>
+<method name="getCurrentLocation" type="()Lcom/fasterxml/jackson/core/JsonLocation;"/>
+<method name="isExpectedStartArrayToken" type="()Z"/>
+<method name="isExpectedStartObjectToken" type="()Z"/>
+<method name="clearCurrentToken" type="()V"/>
+<method name="getLastClearedToken" type="()Lcom/fasterxml/jackson/core/JsonToken;"/>
+<method name="overrideCurrentName" type="(Ljava/lang/String;)V"/>
+<method name="getText" type="()Ljava/lang/String;"/>
+<method name="getTextCharacters" type="()[C"/>
+<method name="getTextLength" type="()I"/>
+<method name="getTextOffset" type="()I"/>
+<method name="hasTextCharacters" type="()Z"/>
+<method name="getNumberValue" type="()Ljava/lang/Number;"/>
+<method name="getNumberType" type="()Lcom/fasterxml/jackson/core/JsonParser$NumberType;"/>
+<method name="getByteValue" type="()B"/>
+<method name="getShortValue" type="()S"/>
+<method name="getIntValue" type="()I"/>
+<method name="getLongValue" type="()J"/>
+<method name="getBigIntegerValue" type="()Ljava/math/BigInteger;"/>
+<method name="getFloatValue" type="()F"/>
+<method name="getDoubleValue" type="()D"/>
+<method name="getDecimalValue" type="()Ljava/math/BigDecimal;"/>
+<method name="getBooleanValue" type="()Z"/>
+<method name="getEmbeddedObject" type="()Ljava/lang/Object;"/>
+<method name="getBinaryValue" type="(Lcom/fasterxml/jackson/core/Base64Variant;)[B"/>
+<method name="getBinaryValue" type="()[B"/>
+<method name="readBinaryValue" type="(Ljava/io/OutputStream;)I"/>
+<method name="readBinaryValue" type="(Lcom/fasterxml/jackson/core/Base64Variant;Ljava/io/OutputStream;)I"/>
+<method name="getValueAsInt" type="()I"/>
+<method name="getValueAsInt" type="(I)I"/>
+<method name="getValueAsLong" type="()J"/>
+<method name="getValueAsLong" type="(J)J"/>
+<method name="getValueAsDouble" type="()D"/>
+<method name="getValueAsDouble" type="(D)D"/>
+<method name="getValueAsBoolean" type="()Z"/>
+<method name="getValueAsBoolean" type="(Z)Z"/>
+<method name="getValueAsString" type="()Ljava/lang/String;"/>
+<method name="getValueAsString" type="(Ljava/lang/String;)Ljava/lang/String;"/>
+<method name="canReadObjectId" type="()Z"/>
+<method name="canReadTypeId" type="()Z"/>
+<method name="getObjectId" type="()Ljava/lang/Object;"/>
+<method name="getTypeId" type="()Ljava/lang/Object;"/>
+<method name="readValueAs" type="(Ljava/lang/Class;)Ljava/lang/Object;"/>
+<method name="readValueAs" type="(Lcom/fasterxml/jackson/core/type/TypeReference;)Ljava/lang/Object;"/>
+<method name="readValuesAs" type="(Ljava/lang/Class;)Ljava/util/Iterator;"/>
+<method name="readValuesAs" type="(Lcom/fasterxml/jackson/core/type/TypeReference;)Ljava/util/Iterator;"/>
+<method name="readValueAsTree" type="()Lcom/fasterxml/jackson/core/TreeNode;"/>
+<method name="_codec" type="()Lcom/fasterxml/jackson/core/ObjectCodec;"/>
+<method name="_constructError" type="(Ljava/lang/String;)Lcom/fasterxml/jackson/core/JsonParseException;"/>
+<method name="_reportUnsupportedOperation" type="()V"/>
+</class>
+<class name="com/fasterxml/jackson/core/ObjectCodec" super="com/fasterxml/jackson/core/TreeCodec">
+<method name="&lt;init&gt;" type="()V"/>
+<method name="version" type="()Lcom/fasterxml/jackson/core/Version;"/>
+<method name="readValue" type="(Lcom/fasterxml/jackson/core/JsonParser;Ljava/lang/Class;)Ljava/lang/Object;"/>
+<method name="readValue" type="(Lcom/fasterxml/jackson/core/JsonParser;Lcom/fasterxml/jackson/core/type/TypeReference;)Ljava/lang/Object;"/>
+<method name="readValue" type="(Lcom/fasterxml/jackson/core/JsonParser;Lcom/fasterxml/jackson/core/type/ResolvedType;)Ljava/lang/Object;"/>
+<method name="readValues" type="(Lcom/fasterxml/jackson/core/JsonParser;Ljava/lang/Class;)Ljava/util/Iterator;"/>
+<method name="readValues" type="(Lcom/fasterxml/jackson/core/JsonParser;Lcom/fasterxml/jackson/core/type/TypeReference;)Ljava/util/Iterator;"/>
+<method name="readValues" type="(Lcom/fasterxml/jackson/core/JsonParser;Lcom/fasterxml/jackson/core/type/ResolvedType;)Ljava/util/Iterator;"/>
+<method name="writeValue" type="(Lcom/fasterxml/jackson/core/JsonGenerator;Ljava/lang/Object;)V"/>
+<method name="readTree" type="(Lcom/fasterxml/jackson/core/JsonParser;)Lcom/fasterxml/jackson/core/TreeNode;"/>
+<method name="writeTree" type="(Lcom/fasterxml/jackson/core/JsonGenerator;Lcom/fasterxml/jackson/core/TreeNode;)V"/>
+<method name="createObjectNode" type="()Lcom/fasterxml/jackson/core/TreeNode;"/>
+<method name="createArrayNode" type="()Lcom/fasterxml/jackson/core/TreeNode;"/>
+<method name="treeAsTokens" type="(Lcom/fasterxml/jackson/core/TreeNode;)Lcom/fasterxml/jackson/core/JsonParser;"/>
+<method name="treeToValue" type="(Lcom/fasterxml/jackson/core/TreeNode;Ljava/lang/Class;)Ljava/lang/Object;"/>
+<method name="getJsonFactory" type="()Lcom/fasterxml/jackson/core/JsonFactory;"/>
+<method name="getFactory" type="()Lcom/fasterxml/jackson/core/JsonFactory;"/>
+</class>
+<class name="com/fasterxml/jackson/core/type/TypeReference" super="java/lang/Object">
+<method name="&lt;init&gt;" type="()V"/>
+<method name="getType" type="()Ljava/lang/reflect/Type;"/>
+<method name="compareTo" type="(Lcom/fasterxml/jackson/core/type/TypeReference;)I"/>
+<method name="compareTo" type="(Ljava/lang/Object;)I"/>
+</class>
+<class name="com/fasterxml/jackson/core/util/DefaultPrettyPrinter$NopIndenter" super="java/lang/Object">
+<method name="&lt;init&gt;" type="()V"/>
+<method name="writeIndentation" type="(Lcom/fasterxml/jackson/core/JsonGenerator;I)V"/>
+<method name="isInline" type="()Z"/>
+</class>
+<class name="com/fasterxml/jackson/core/util/DefaultPrettyPrinter" super="java/lang/Object">
+<method name="&lt;init&gt;" type="()V"/>
+<method name="&lt;init&gt;" type="(Ljava/lang/String;)V"/>
+<method name="&lt;init&gt;" type="(Lcom/fasterxml/jackson/core/SerializableString;)V"/>
+<method name="&lt;init&gt;" type="(Lcom/fasterxml/jackson/core/util/DefaultPrettyPrinter;)V"/>
+<method name="&lt;init&gt;" type="(Lcom/fasterxml/jackson/core/util/DefaultPrettyPrinter;Lcom/fasterxml/jackson/core/SerializableString;)V"/>
+<method name="withRootSeparator" type="(Lcom/fasterxml/jackson/core/SerializableString;)Lcom/fasterxml/jackson/core/util/DefaultPrettyPrinter;"/>
+<method name="withRootSeparator" type="(Ljava/lang/String;)Lcom/fasterxml/jackson/core/util/DefaultPrettyPrinter;"/>
+<method name="indentArraysWith" type="(Lcom/fasterxml/jackson/core/util/DefaultPrettyPrinter$Indenter;)V"/>
+<method name="indentObjectsWith" type="(Lcom/fasterxml/jackson/core/util/DefaultPrettyPrinter$Indenter;)V"/>
+<method name="spacesInObjectEntries" type="(Z)V"/>
+<method name="withArrayIndenter" type="(Lcom/fasterxml/jackson/core/util/DefaultPrettyPrinter$Indenter;)Lcom/fasterxml/jackson/core/util/DefaultPrettyPrinter;"/>
+<method name="withObjectIndenter" type="(Lcom/fasterxml/jackson/core/util/DefaultPrettyPrinter$Indenter;)Lcom/fasterxml/jackson/core/util/DefaultPrettyPrinter;"/>
+<method name="withSpacesInObjectEntries" type="()Lcom/fasterxml/jackson/core/util/DefaultPrettyPrinter;"/>
+<method name="withoutSpacesInObjectEntries" type="()Lcom/fasterxml/jackson/core/util/DefaultPrettyPrinter;"/>
+<method name="_withSpaces" type="(Z)Lcom/fasterxml/jackson/core/util/DefaultPrettyPrinter;"/>
+<method name="createInstance" type="()Lcom/fasterxml/jackson/core/util/DefaultPrettyPrinter;"/>
+<method name="writeRootValueSeparator" type="(Lcom/fasterxml/jackson/core/JsonGenerator;)V"/>
+<method name="writeStartObject" type="(Lcom/fasterxml/jackson/core/JsonGenerator;)V"/>
+<method name="beforeObjectEntries" type="(Lcom/fasterxml/jackson/core/JsonGenerator;)V"/>
+<method name="writeObjectFieldValueSeparator" type="(Lcom/fasterxml/jackson/core/JsonGenerator;)V"/>
+<method name="writeObjectEntrySeparator" type="(Lcom/fasterxml/jackson/core/JsonGenerator;)V"/>
+<method name="writeEndObject" type="(Lcom/fasterxml/jackson/core/JsonGenerator;I)V"/>
+<method name="writeStartArray" type="(Lcom/fasterxml/jackson/core/JsonGenerator;)V"/>
+<method name="beforeArrayValues" type="(Lcom/fasterxml/jackson/core/JsonGenerator;)V"/>
+<method name="writeArrayValueSeparator" type="(Lcom/fasterxml/jackson/core/JsonGenerator;)V"/>
+<method name="writeEndArray" type="(Lcom/fasterxml/jackson/core/JsonGenerator;I)V"/>
+<method name="createInstance" type="()Ljava/lang/Object;"/>
+</class>
+<class name="com/fasterxml/jackson/core/util/MinimalPrettyPrinter" super="java/lang/Object">
+<method name="&lt;init&gt;" type="()V"/>
+<method name="&lt;init&gt;" type="(Ljava/lang/String;)V"/>
+<method name="setRootValueSeparator" type="(Ljava/lang/String;)V"/>
+<method name="writeRootValueSeparator" type="(Lcom/fasterxml/jackson/core/JsonGenerator;)V"/>
+<method name="writeStartObject" type="(Lcom/fasterxml/jackson/core/JsonGenerator;)V"/>
+<method name="beforeObjectEntries" type="(Lcom/fasterxml/jackson/core/JsonGenerator;)V"/>
+<method name="writeObjectFieldValueSeparator" type="(Lcom/fasterxml/jackson/core/JsonGenerator;)V"/>
+<method name="writeObjectEntrySeparator" type="(Lcom/fasterxml/jackson/core/JsonGenerator;)V"/>
+<method name="writeEndObject" type="(Lcom/fasterxml/jackson/core/JsonGenerator;I)V"/>
+<method name="writeStartArray" type="(Lcom/fasterxml/jackson/core/JsonGenerator;)V"/>
+<method name="beforeArrayValues" type="(Lcom/fasterxml/jackson/core/JsonGenerator;)V"/>
+<method name="writeArrayValueSeparator" type="(Lcom/fasterxml/jackson/core/JsonGenerator;)V"/>
+<method name="writeEndArray" type="(Lcom/fasterxml/jackson/core/JsonGenerator;I)V"/>
+</class>
+<class name="com/fasterxml/jackson/core/Version" super="java/lang/Object">
+<method name="&lt;init&gt;" type="(IIILjava/lang/String;)V"/>
+<method name="&lt;init&gt;" type="(IIILjava/lang/String;Ljava/lang/String;Ljava/lang/String;)V"/>
+<method name="unknownVersion" type="()Lcom/fasterxml/jackson/core/Version;" class_method="true"/>
+<method name="isUknownVersion" type="()Z"/>
+<method name="isSnapshot" type="()Z"/>
+<method name="getMajorVersion" type="()I"/>
+<method name="getMinorVersion" type="()I"/>
+<method name="getPatchLevel" type="()I"/>
+<method name="getGroupId" type="()Ljava/lang/String;"/>
+<method name="getArtifactId" type="()Ljava/lang/String;"/>
+<method name="toFullString" type="()Ljava/lang/String;"/>
+<method name="toString" type="()Ljava/lang/String;"/>
+<method name="hashCode" type="()I"/>
+<method name="equals" type="(Ljava/lang/Object;)Z"/>
+<method name="compareTo" type="(Lcom/fasterxml/jackson/core/Version;)I"/>
+<method name="compareTo" type="(Ljava/lang/Object;)I"/>
+</class>
+<interface name="com/fasterxml/jackson/core/format/InputAccessor">
+<method name="hasMoreBytes" type="()Z"/>
+<method name="nextByte" type="()B"/>
+<method name="reset" type="()V"/>
+</interface>
+<interface name="com/fasterxml/jackson/core/FormatFeature">
+<method name="enabledByDefault" type="()Z"/>
+<method name="getMask" type="()I"/>
+<method name="enabledIn" type="(I)Z"/>
+</interface>
+<interface name="com/fasterxml/jackson/core/FormatSchema">
+<method name="getSchemaType" type="()Ljava/lang/String;"/>
+</interface>
+<interface name="com/fasterxml/jackson/core/JsonTokenId">
+</interface>
+<interface name="com/fasterxml/jackson/core/PrettyPrinter">
+<method name="writeRootValueSeparator" type="(Lcom/fasterxml/jackson/core/JsonGenerator;)V"/>
+<method name="writeStartObject" type="(Lcom/fasterxml/jackson/core/JsonGenerator;)V"/>
+<method name="writeEndObject" type="(Lcom/fasterxml/jackson/core/JsonGenerator;I)V"/>
+<method name="writeObjectEntrySeparator" type="(Lcom/fasterxml/jackson/core/JsonGenerator;)V"/>
+<method name="writeObjectFieldValueSeparator" type="(Lcom/fasterxml/jackson/core/JsonGenerator;)V"/>
+<method name="writeStartArray" type="(Lcom/fasterxml/jackson/core/JsonGenerator;)V"/>
+<method name="writeEndArray" type="(Lcom/fasterxml/jackson/core/JsonGenerator;I)V"/>
+<method name="writeArrayValueSeparator" type="(Lcom/fasterxml/jackson/core/JsonGenerator;)V"/>
+<method name="beforeArrayValues" type="(Lcom/fasterxml/jackson/core/JsonGenerator;)V"/>
+<method name="beforeObjectEntries" type="(Lcom/fasterxml/jackson/core/JsonGenerator;)V"/>
+</interface>
+<interface name="com/fasterxml/jackson/core/SerializableString">
+<method name="getValue" type="()Ljava/lang/String;"/>
+<method name="charLength" type="()I"/>
+<method name="asQuotedChars" type="()[C"/>
+<method name="asUnquotedUTF8" type="()[B"/>
+<method name="asQuotedUTF8" type="()[B"/>
+<method name="appendQuotedUTF8" type="([BI)I"/>
+<method name="appendQuoted" type="([CI)I"/>
+<method name="appendUnquotedUTF8" type="([BI)I"/>
+<method name="appendUnquoted" type="([CI)I"/>
+<method name="writeQuotedUTF8" type="(Ljava/io/OutputStream;)I"/>
+<method name="writeUnquotedUTF8" type="(Ljava/io/OutputStream;)I"/>
+<method name="putQuotedUTF8" type="(Ljava/nio/ByteBuffer;)I"/>
+<method name="putUnquotedUTF8" type="(Ljava/nio/ByteBuffer;)I"/>
+</interface>
+<interface name="com/fasterxml/jackson/core/TreeNode">
+<method name="asToken" type="()Lcom/fasterxml/jackson/core/JsonToken;"/>
+<method name="numberType" type="()Lcom/fasterxml/jackson/core/JsonParser$NumberType;"/>
+<method name="size" type="()I"/>
+<method name="isValueNode" type="()Z"/>
+<method name="isContainerNode" type="()Z"/>
+<method name="isMissingNode" type="()Z"/>
+<method name="isArray" type="()Z"/>
+<method name="isObject" type="()Z"/>
+<method name="get" type="(Ljava/lang/String;)Lcom/fasterxml/jackson/core/TreeNode;"/>
+<method name="get" type="(I)Lcom/fasterxml/jackson/core/TreeNode;"/>
+<method name="path" type="(Ljava/lang/String;)Lcom/fasterxml/jackson/core/TreeNode;"/>
+<method name="path" type="(I)Lcom/fasterxml/jackson/core/TreeNode;"/>
+<method name="fieldNames" type="()Ljava/util/Iterator;"/>
+<method name="at" type="(Lcom/fasterxml/jackson/core/JsonPointer;)Lcom/fasterxml/jackson/core/TreeNode;"/>
+<method name="at" type="(Ljava/lang/String;)Lcom/fasterxml/jackson/core/TreeNode;"/>
+<method name="traverse" type="()Lcom/fasterxml/jackson/core/JsonParser;"/>
+<method name="traverse" type="(Lcom/fasterxml/jackson/core/ObjectCodec;)Lcom/fasterxml/jackson/core/JsonParser;"/>
+</interface>
+<interface name="com/fasterxml/jackson/core/util/DefaultPrettyPrinter$Indenter">
+<method name="writeIndentation" type="(Lcom/fasterxml/jackson/core/JsonGenerator;I)V"/>
+<method name="isInline" type="()Z"/>
+</interface>
+<interface name="com/fasterxml/jackson/core/util/Instantiatable">
+<method name="createInstance" type="()Ljava/lang/Object;"/>
+</interface>
+<interface name="com/fasterxml/jackson/core/Versioned">
+<method name="version" type="()Lcom/fasterxml/jackson/core/Version;"/>
+</interface>
+</signatures>

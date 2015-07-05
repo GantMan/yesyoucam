@@ -1,0 +1,178 @@
+<?xml version='1.0'?>
+<signatures version='1.0'>
+<class name="com/fasterxml/jackson/annotation/JsonAutoDetect$1" super="java/lang/Object">
+</class>
+<class name="com/fasterxml/jackson/annotation/JsonAutoDetect$Visibility" super="java/lang/Enum">
+<method name="values" type="()[Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;" class_method="true"/>
+<method name="valueOf" type="(Ljava/lang/String;)Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;" class_method="true"/>
+<method name="isVisible" type="(Ljava/lang/reflect/Member;)Z"/>
+</class>
+<class name="com/fasterxml/jackson/annotation/JsonCreator$Mode" super="java/lang/Enum">
+<method name="values" type="()[Lcom/fasterxml/jackson/annotation/JsonCreator$Mode;" class_method="true"/>
+<method name="valueOf" type="(Ljava/lang/String;)Lcom/fasterxml/jackson/annotation/JsonCreator$Mode;" class_method="true"/>
+</class>
+<class name="com/fasterxml/jackson/annotation/JsonFormat$Feature" super="java/lang/Enum">
+<method name="values" type="()[Lcom/fasterxml/jackson/annotation/JsonFormat$Feature;" class_method="true"/>
+<method name="valueOf" type="(Ljava/lang/String;)Lcom/fasterxml/jackson/annotation/JsonFormat$Feature;" class_method="true"/>
+</class>
+<class name="com/fasterxml/jackson/annotation/JsonFormat$Features" super="java/lang/Object">
+<method name="empty" type="()Lcom/fasterxml/jackson/annotation/JsonFormat$Features;" class_method="true"/>
+<method name="construct" type="(Lcom/fasterxml/jackson/annotation/JsonFormat;)Lcom/fasterxml/jackson/annotation/JsonFormat$Features;" class_method="true"/>
+<method name="construct" type="([Lcom/fasterxml/jackson/annotation/JsonFormat$Feature;[Lcom/fasterxml/jackson/annotation/JsonFormat$Feature;)Lcom/fasterxml/jackson/annotation/JsonFormat$Features;" class_method="true"/>
+<method name="with" type="([Lcom/fasterxml/jackson/annotation/JsonFormat$Feature;)Lcom/fasterxml/jackson/annotation/JsonFormat$Features;"/>
+<method name="without" type="([Lcom/fasterxml/jackson/annotation/JsonFormat$Feature;)Lcom/fasterxml/jackson/annotation/JsonFormat$Features;"/>
+<method name="get" type="(Lcom/fasterxml/jackson/annotation/JsonFormat$Feature;)Ljava/lang/Boolean;"/>
+</class>
+<class name="com/fasterxml/jackson/annotation/JsonFormat$Shape" super="java/lang/Enum">
+<method name="values" type="()[Lcom/fasterxml/jackson/annotation/JsonFormat$Shape;" class_method="true"/>
+<method name="valueOf" type="(Ljava/lang/String;)Lcom/fasterxml/jackson/annotation/JsonFormat$Shape;" class_method="true"/>
+<method name="isNumeric" type="()Z"/>
+<method name="isStructured" type="()Z"/>
+</class>
+<class name="com/fasterxml/jackson/annotation/JsonInclude$Include" super="java/lang/Enum">
+<method name="values" type="()[Lcom/fasterxml/jackson/annotation/JsonInclude$Include;" class_method="true"/>
+<method name="valueOf" type="(Ljava/lang/String;)Lcom/fasterxml/jackson/annotation/JsonInclude$Include;" class_method="true"/>
+</class>
+<class name="com/fasterxml/jackson/annotation/JsonProperty$Access" super="java/lang/Enum">
+<method name="values" type="()[Lcom/fasterxml/jackson/annotation/JsonProperty$Access;" class_method="true"/>
+<method name="valueOf" type="(Ljava/lang/String;)Lcom/fasterxml/jackson/annotation/JsonProperty$Access;" class_method="true"/>
+</class>
+<class name="com/fasterxml/jackson/annotation/JsonTypeInfo$As" super="java/lang/Enum">
+<method name="values" type="()[Lcom/fasterxml/jackson/annotation/JsonTypeInfo$As;" class_method="true"/>
+<method name="valueOf" type="(Ljava/lang/String;)Lcom/fasterxml/jackson/annotation/JsonTypeInfo$As;" class_method="true"/>
+</class>
+<class name="com/fasterxml/jackson/annotation/JsonTypeInfo$Id" super="java/lang/Enum">
+<method name="values" type="()[Lcom/fasterxml/jackson/annotation/JsonTypeInfo$Id;" class_method="true"/>
+<method name="valueOf" type="(Ljava/lang/String;)Lcom/fasterxml/jackson/annotation/JsonTypeInfo$Id;" class_method="true"/>
+<method name="getDefaultPropertyName" type="()Ljava/lang/String;"/>
+</class>
+<class name="com/fasterxml/jackson/annotation/JsonTypeInfo$None" super="java/lang/Object">
+<method name="&lt;init&gt;" type="()V"/>
+</class>
+<class name="com/fasterxml/jackson/annotation/ObjectIdGenerators$Base" super="com/fasterxml/jackson/annotation/ObjectIdGenerator">
+<method name="&lt;init&gt;" type="(Ljava/lang/Class;)V"/>
+<method name="getScope" type="()Ljava/lang/Class;"/>
+<method name="canUseFor" type="(Lcom/fasterxml/jackson/annotation/ObjectIdGenerator;)Z"/>
+<method name="generateId" type="(Ljava/lang/Object;)Ljava/lang/Object;"/>
+</class>
+<class name="com/fasterxml/jackson/annotation/ObjectIdGenerators$IntSequenceGenerator" super="com/fasterxml/jackson/annotation/ObjectIdGenerators$Base">
+<method name="&lt;init&gt;" type="()V"/>
+<method name="&lt;init&gt;" type="(Ljava/lang/Class;I)V"/>
+<method name="initialValue" type="()I"/>
+<method name="forScope" type="(Ljava/lang/Class;)Lcom/fasterxml/jackson/annotation/ObjectIdGenerator;"/>
+<method name="newForSerialization" type="(Ljava/lang/Object;)Lcom/fasterxml/jackson/annotation/ObjectIdGenerator;"/>
+<method name="key" type="(Ljava/lang/Object;)Lcom/fasterxml/jackson/annotation/ObjectIdGenerator$IdKey;"/>
+<method name="generateId" type="(Ljava/lang/Object;)Ljava/lang/Integer;"/>
+<method name="generateId" type="(Ljava/lang/Object;)Ljava/lang/Object;"/>
+<method name="canUseFor" type="(Lcom/fasterxml/jackson/annotation/ObjectIdGenerator;)Z"/>
+</class>
+<class name="com/fasterxml/jackson/annotation/ObjectIdGenerators$None" super="com/fasterxml/jackson/annotation/ObjectIdGenerator">
+<method name="&lt;init&gt;" type="()V"/>
+</class>
+<class name="com/fasterxml/jackson/annotation/ObjectIdGenerators$PropertyGenerator" super="com/fasterxml/jackson/annotation/ObjectIdGenerators$Base">
+<method name="&lt;init&gt;" type="(Ljava/lang/Class;)V"/>
+<method name="canUseFor" type="(Lcom/fasterxml/jackson/annotation/ObjectIdGenerator;)Z"/>
+</class>
+<class name="com/fasterxml/jackson/annotation/ObjectIdGenerators$UUIDGenerator" super="com/fasterxml/jackson/annotation/ObjectIdGenerators$Base">
+<method name="&lt;init&gt;" type="()V"/>
+<method name="forScope" type="(Ljava/lang/Class;)Lcom/fasterxml/jackson/annotation/ObjectIdGenerator;"/>
+<method name="newForSerialization" type="(Ljava/lang/Object;)Lcom/fasterxml/jackson/annotation/ObjectIdGenerator;"/>
+<method name="generateId" type="(Ljava/lang/Object;)Ljava/util/UUID;"/>
+<method name="key" type="(Ljava/lang/Object;)Lcom/fasterxml/jackson/annotation/ObjectIdGenerator$IdKey;"/>
+<method name="canUseFor" type="(Lcom/fasterxml/jackson/annotation/ObjectIdGenerator;)Z"/>
+<method name="generateId" type="(Ljava/lang/Object;)Ljava/lang/Object;"/>
+</class>
+<class name="com/fasterxml/jackson/annotation/ObjectIdGenerators" super="java/lang/Object">
+<method name="&lt;init&gt;" type="()V"/>
+</class>
+<class name="com/fasterxml/jackson/annotation/OptBoolean" super="java/lang/Enum">
+<method name="values" type="()[Lcom/fasterxml/jackson/annotation/OptBoolean;" class_method="true"/>
+<method name="valueOf" type="(Ljava/lang/String;)Lcom/fasterxml/jackson/annotation/OptBoolean;" class_method="true"/>
+<method name="asBoolean" type="()Ljava/lang/Boolean;"/>
+<method name="asPrimitive" type="()Z"/>
+<method name="fromBoolean" type="(Ljava/lang/Boolean;)Lcom/fasterxml/jackson/annotation/OptBoolean;" class_method="true"/>
+</class>
+<class name="com/fasterxml/jackson/annotation/PropertyAccessor" super="java/lang/Enum">
+<method name="values" type="()[Lcom/fasterxml/jackson/annotation/PropertyAccessor;" class_method="true"/>
+<method name="valueOf" type="(Ljava/lang/String;)Lcom/fasterxml/jackson/annotation/PropertyAccessor;" class_method="true"/>
+<method name="creatorEnabled" type="()Z"/>
+<method name="getterEnabled" type="()Z"/>
+<method name="isGetterEnabled" type="()Z"/>
+<method name="setterEnabled" type="()Z"/>
+<method name="fieldEnabled" type="()Z"/>
+</class>
+<class name="com/fasterxml/jackson/annotation/JsonFormat$Value" super="java/lang/Object">
+<method name="&lt;init&gt;" type="()V"/>
+<method name="&lt;init&gt;" type="(Lcom/fasterxml/jackson/annotation/JsonFormat;)V"/>
+<method name="&lt;init&gt;" type="(Ljava/lang/String;Lcom/fasterxml/jackson/annotation/JsonFormat$Shape;Ljava/lang/String;Ljava/lang/String;Lcom/fasterxml/jackson/annotation/JsonFormat$Features;)V"/>
+<method name="&lt;init&gt;" type="(Ljava/lang/String;Lcom/fasterxml/jackson/annotation/JsonFormat$Shape;Ljava/util/Locale;Ljava/util/TimeZone;Lcom/fasterxml/jackson/annotation/JsonFormat$Features;)V"/>
+<method name="&lt;init&gt;" type="(Ljava/lang/String;Lcom/fasterxml/jackson/annotation/JsonFormat$Shape;Ljava/util/Locale;Ljava/lang/String;Ljava/util/TimeZone;Lcom/fasterxml/jackson/annotation/JsonFormat$Features;)V"/>
+<method name="&lt;init&gt;" type="(Ljava/lang/String;Lcom/fasterxml/jackson/annotation/JsonFormat$Shape;Ljava/util/Locale;Ljava/util/TimeZone;)V"/>
+<method name="&lt;init&gt;" type="(Ljava/lang/String;Lcom/fasterxml/jackson/annotation/JsonFormat$Shape;Ljava/lang/String;Ljava/lang/String;)V"/>
+<method name="&lt;init&gt;" type="(Ljava/lang/String;Lcom/fasterxml/jackson/annotation/JsonFormat$Shape;Ljava/util/Locale;Ljava/lang/String;Ljava/util/TimeZone;)V"/>
+<method name="forPattern" type="(Ljava/lang/String;)Lcom/fasterxml/jackson/annotation/JsonFormat$Value;" class_method="true"/>
+<method name="withPattern" type="(Ljava/lang/String;)Lcom/fasterxml/jackson/annotation/JsonFormat$Value;"/>
+<method name="withShape" type="(Lcom/fasterxml/jackson/annotation/JsonFormat$Shape;)Lcom/fasterxml/jackson/annotation/JsonFormat$Value;"/>
+<method name="withLocale" type="(Ljava/util/Locale;)Lcom/fasterxml/jackson/annotation/JsonFormat$Value;"/>
+<method name="withTimeZone" type="(Ljava/util/TimeZone;)Lcom/fasterxml/jackson/annotation/JsonFormat$Value;"/>
+<method name="withFeature" type="(Lcom/fasterxml/jackson/annotation/JsonFormat$Feature;)Lcom/fasterxml/jackson/annotation/JsonFormat$Value;"/>
+<method name="withoutFeature" type="(Lcom/fasterxml/jackson/annotation/JsonFormat$Feature;)Lcom/fasterxml/jackson/annotation/JsonFormat$Value;"/>
+<method name="valueFor" type="()Ljava/lang/Class;"/>
+<method name="getPattern" type="()Ljava/lang/String;"/>
+<method name="getShape" type="()Lcom/fasterxml/jackson/annotation/JsonFormat$Shape;"/>
+<method name="getLocale" type="()Ljava/util/Locale;"/>
+<method name="timeZoneAsString" type="()Ljava/lang/String;"/>
+<method name="getTimeZone" type="()Ljava/util/TimeZone;"/>
+<method name="hasShape" type="()Z"/>
+<method name="hasPattern" type="()Z"/>
+<method name="hasLocale" type="()Z"/>
+<method name="hasTimeZone" type="()Z"/>
+<method name="getFeature" type="(Lcom/fasterxml/jackson/annotation/JsonFormat$Feature;)Ljava/lang/Boolean;"/>
+</class>
+<class name="com/fasterxml/jackson/annotation/JsonInclude$Value" super="java/lang/Object">
+<method name="&lt;init&gt;" type="(Lcom/fasterxml/jackson/annotation/JsonInclude;)V"/>
+<method name="&lt;init&gt;" type="(Lcom/fasterxml/jackson/annotation/JsonInclude$Include;Lcom/fasterxml/jackson/annotation/JsonInclude$Include;)V"/>
+<method name="withOverrides" type="(Lcom/fasterxml/jackson/annotation/JsonInclude$Value;)Lcom/fasterxml/jackson/annotation/JsonInclude$Value;"/>
+<method name="empty" type="()Lcom/fasterxml/jackson/annotation/JsonInclude$Value;" class_method="true"/>
+<method name="construct" type="(Lcom/fasterxml/jackson/annotation/JsonInclude$Include;Lcom/fasterxml/jackson/annotation/JsonInclude$Include;)Lcom/fasterxml/jackson/annotation/JsonInclude$Value;" class_method="true"/>
+<method name="from" type="(Lcom/fasterxml/jackson/annotation/JsonInclude;)Lcom/fasterxml/jackson/annotation/JsonInclude$Value;" class_method="true"/>
+<method name="withValueInclusion" type="(Lcom/fasterxml/jackson/annotation/JsonInclude$Include;)Lcom/fasterxml/jackson/annotation/JsonInclude$Value;"/>
+<method name="withContentInclusion" type="(Lcom/fasterxml/jackson/annotation/JsonInclude$Include;)Lcom/fasterxml/jackson/annotation/JsonInclude$Value;"/>
+<method name="valueFor" type="()Ljava/lang/Class;"/>
+<method name="getValueInclusion" type="()Lcom/fasterxml/jackson/annotation/JsonInclude$Include;"/>
+<method name="getContentInclusion" type="()Lcom/fasterxml/jackson/annotation/JsonInclude$Include;"/>
+</class>
+<class name="com/fasterxml/jackson/annotation/ObjectIdGenerator$IdKey" super="java/lang/Object">
+<method name="&lt;init&gt;" type="(Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Object;)V"/>
+<method name="hashCode" type="()I"/>
+<method name="equals" type="(Ljava/lang/Object;)Z"/>
+<method name="toString" type="()Ljava/lang/String;"/>
+</class>
+<class name="com/fasterxml/jackson/annotation/ObjectIdGenerator" super="java/lang/Object">
+<method name="&lt;init&gt;" type="()V"/>
+<method name="getScope" type="()Ljava/lang/Class;"/>
+<method name="canUseFor" type="(Lcom/fasterxml/jackson/annotation/ObjectIdGenerator;)Z"/>
+<method name="maySerializeAsObject" type="()Z"/>
+<method name="isValidReferencePropertyName" type="(Ljava/lang/String;Ljava/lang/Object;)Z"/>
+<method name="forScope" type="(Ljava/lang/Class;)Lcom/fasterxml/jackson/annotation/ObjectIdGenerator;"/>
+<method name="newForSerialization" type="(Ljava/lang/Object;)Lcom/fasterxml/jackson/annotation/ObjectIdGenerator;"/>
+<method name="key" type="(Ljava/lang/Object;)Lcom/fasterxml/jackson/annotation/ObjectIdGenerator$IdKey;"/>
+<method name="generateId" type="(Ljava/lang/Object;)Ljava/lang/Object;"/>
+</class>
+<class name="com/fasterxml/jackson/annotation/SimpleObjectIdResolver" super="java/lang/Object">
+<method name="&lt;init&gt;" type="()V"/>
+<method name="bindItem" type="(Lcom/fasterxml/jackson/annotation/ObjectIdGenerator$IdKey;Ljava/lang/Object;)V"/>
+<method name="resolveId" type="(Lcom/fasterxml/jackson/annotation/ObjectIdGenerator$IdKey;)Ljava/lang/Object;"/>
+<method name="canUseFor" type="(Lcom/fasterxml/jackson/annotation/ObjectIdResolver;)Z"/>
+<method name="newForDeserialization" type="(Ljava/lang/Object;)Lcom/fasterxml/jackson/annotation/ObjectIdResolver;"/>
+</class>
+<interface name="com/fasterxml/jackson/annotation/JacksonAnnotationValue">
+<method name="valueFor" type="()Ljava/lang/Class;"/>
+</interface>
+<interface name="com/fasterxml/jackson/annotation/ObjectIdResolver">
+<method name="bindItem" type="(Lcom/fasterxml/jackson/annotation/ObjectIdGenerator$IdKey;Ljava/lang/Object;)V"/>
+<method name="resolveId" type="(Lcom/fasterxml/jackson/annotation/ObjectIdGenerator$IdKey;)Ljava/lang/Object;"/>
+<method name="newForDeserialization" type="(Ljava/lang/Object;)Lcom/fasterxml/jackson/annotation/ObjectIdResolver;"/>
+<method name="canUseFor" type="(Lcom/fasterxml/jackson/annotation/ObjectIdResolver;)Z"/>
+</interface>
+</signatures>

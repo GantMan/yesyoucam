@@ -15,7 +15,7 @@ class YesYouCam
 
         if photo_file
           take_picture_intent.putExtra(Potion::MediaStore::EXTRA_OUTPUT, Potion::Uri.fromFile(photo_file))
-          startActivityForResult(take_picture_intent, REQUEST_IMAGE_CAPTURE)
+          find.activity.startActivityForResult(take_picture_intent, REQUEST_IMAGE_CAPTURE)
         end
       end
     end

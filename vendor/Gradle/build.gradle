@@ -1,0 +1,45 @@
+apply plugin: 'java'
+apply plugin: 'eclipse'
+
+task generateDependencies(type: Copy) {
+  from sourceSets.main.runtimeClasspath
+  into 'dependencies/'
+}
+
+repositories {
+  
+    maven {
+      url "/Users/gantman/android-rubymotion/sdk/extras/android/m2repository/"
+    }
+  
+  
+    maven {
+      url "/Users/gantman/android-rubymotion/sdk/extras/google/m2repository/"
+    }
+  
+  
+  mavenCentral()
+}
+
+dependencies {
+  
+  
+    
+      
+        compile group: 'com.fasterxml.jackson.core', name: 'jackson-core', version: '+'
+      
+    
+  
+    
+      
+        compile group: 'com.fasterxml.jackson.core', name: 'jackson-annotations', version: '+'
+      
+    
+  
+    
+      
+        compile group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '+'
+      
+    
+  
+}

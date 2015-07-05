@@ -14,13 +14,14 @@ Motion::Project::App.setup do |app|
   # Use `rake config' to see complete project settings.
   app.name = 'yesyoucam'
   app.target_api_version = "16"
+  app.permissions = [:internet, :write_external_storage]
 
   app.archs = ["x86"] unless ARGV.include?("device") || ARGV.include?("release")
   app.package = "com.gantlaborde.yesyoucam"
   app.theme = "@android:style/Theme.Holo.Light"
   app.icon = 'ic_launcher'
 
-  app.application_class = "BluePotionApplication"
+  app.application_class = "YYCApplication"
   app.main_activity = "PMHomeActivity"
   app.sub_activities += %w(PMSingleFragmentActivity PMNavigationActivity)
 end

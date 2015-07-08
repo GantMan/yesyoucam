@@ -1,10 +1,10 @@
 class YesYouCam
   OK = Android::App::Activity::RESULT_OK
   CAPTURE_IMAGE_RC = 100
-  CAPTURE_VIDEO_RC = 200
+  CHOOSE_IMAGE_RC = 101
 
   class << self
-    REQUEST_IMAGE_CAPTURE = 1
+
 
     @current_photo_path = nil
 
@@ -23,12 +23,17 @@ class YesYouCam
 
           if photo_file
             take_picture_intent.putExtra(Potion::MediaStore::EXTRA_OUTPUT, Potion::Uri.fromFile(photo_file))
-            find.activity.startActivityForResult(take_picture_intent, REQUEST_IMAGE_CAPTURE)
+            find.activity.startActivityForResult(take_picture_intent, YesYouCam::CAPTURE_IMAGE_RC)
             success = true
           end
         end
       end
       success
+    end
+
+    def choose_photo
+      choose_pic = Potion::Intent.new(Potion::Intent::ACTION_PICK, Potion::INTERNAL_CONTENT_URI)
+      find.activity.startActivityForResult(choose_pic, YesYouCam::CHOOSE_IMAGE_RC)
     end
 
     def pic_to_png(quality=100)
@@ -57,7 +62,7 @@ class YesYouCam
 
     def add_to_gallery
       media_scan_intent = Potion::Intent.new(Potion::Intent::ACTION_MEDIA_SCANNER_SCAN_FILE)
-      photo_file = Potion::File(photo_path)
+      photo_file = Potion::File.new(photo_path)
       content_uri = Potion::Uri.fromFile(photo_file)
       media_scan_intent.setData(content_uri)
       find.app.context.sendBroadcast(media_scan_intent)

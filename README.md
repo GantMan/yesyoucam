@@ -50,7 +50,8 @@
 
 ### Let the user select a photo from their library?
 ```ruby
-# TODO
+  # Fire off a photo choose request
+  YesYouCam.choose_photo
 ```
 
 

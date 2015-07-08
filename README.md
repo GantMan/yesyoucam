@@ -22,12 +22,11 @@
     if (request_code == YesYouCam::CAPTURE_IMAGE_RC)
       if (result_code == YesYouCam::OK) # OR Android::App::Activity::RESULT_OK
         # Photo success!
-        p "Full sized photo located at #{YesYouCam.photo_path}"
-        # I sure could use a thumbnail!
-        thumbnail = YesYouCam.make_thumbnail(data)
-        # now you can do some_image_view.imageBitmap = thumbnail
+        mp "Full sized photo located at #{YesYouCam.photo_path}"
+        # now you can do find!(:some_image_view).imageBitmap = YesYouCam.bmp_data
       else
         # Photo failed or was cancelled
+        app.toast "No Photo"
       end
     end
   end
@@ -54,6 +53,34 @@
   YesYouCam.choose_photo
 ```
 
+### Kitchen Sink Example
+```ruby
+  app.alert(title: "Update Photo", message: "How would you like to update your photo?", positive_button: "Take Photo", negative_button: "Choose from Library") do |choice|
+    case choice
+    when "Take Photo"
+      YesYouCam.capture_photo
+    when "Choose from Library"
+      YesYouCam.choose_photo
+    end
+  end
+
+  def activity_result(request_code, result_code, data)
+    if request_code == YesYouCam::CAPTURE_IMAGE_RC
+      if result_code == YesYouCam::OK
+        # Photo success!
+        mp "Full sized photo located at #{YesYouCam.photo_path}"
+        find!(:some_image_view).imageBitmap = YesYouCam.bmp_data
+      else
+        # Photo failed or was cancelled
+        app.toast "No Photo"
+      end
+    elsif request_code == YesYouCam::CHOOSE_IMAGE_RC
+      # photo chosen
+      selected_uri = data.getData
+      find!(:some_image_view).imageURI = selected_uri
+    end
+  end
+```
 
 ## Installation
 

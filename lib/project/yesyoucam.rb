@@ -51,13 +51,12 @@ class YesYouCam
       @current_photo_path
     end
 
-    def camera_exists?
-      find.app.package_manager.hasSystemFeature("android.hardware.camera")
+    def bmp_data
+      Android::Graphics::BitmapFactory.decodeFile(photo_path)
     end
 
-    def make_thumbnail data
-      extras = data.getExtras
-      extras.get("data")
+    def camera_exists?
+      find.app.package_manager.hasSystemFeature("android.hardware.camera")
     end
 
     def add_to_gallery

@@ -7,7 +7,9 @@
 ### Take a Photo
 
 ```ruby
-  # First - Fire off a photo
+  # Fire off a photo taking request
+  # Returns true if camera intent is presented to the user.
+  # Depends on camera existence (YesYouCam.camera_exists?)
   YesYouCam.capture_photo
 ```
 
@@ -16,11 +18,14 @@
   # called in BluePotion when the photo has been taken (or any activity is completed actually)
   # If you're not using a PMActivity you should capture the onActivityResult method.
   def activity_result(request_code, result_code, data)
-    if (result_code == YesYouCam.OK) # OR Android::App::Activity::RESULT_OK
-      # Photo success!
-      p "Photo located at #{YesYouCam.photo_path}"
-    else
-      # Photo failed or was cancelled
+    # Verify this activity was for us!
+    if (request_code == YesYouCam::CAPTURE_IMAGE_RC)
+      if (result_code == YesYouCam::OK) # OR Android::App::Activity::RESULT_OK
+        # Photo success!
+        p "Photo located at #{YesYouCam.photo_path}"
+      else
+        # Photo failed or was cancelled
+      end
     end
   end
 ```
@@ -53,6 +58,13 @@ Add this line to your application's Gemfile:
 And then execute:
 
     $ bundle
+
+Now make sure your `Rakefile` has camera permissions and features needed:
+    # This gem will try to add permissions, but it's best that you assure they are set!
+    app.permissions += [:write_external_storage]
+    # This gem will add this feature, but it's safest for you to also set it!
+    app.features = ["android.hardware.camera"]
+
 
 ## Contributing
 

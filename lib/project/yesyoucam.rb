@@ -50,6 +50,19 @@ class YesYouCam
       find.app.package_manager.hasSystemFeature("android.hardware.camera")
     end
 
+    def make_thumbnail data
+      extras = data.getExtras
+      extras.get("data")
+    end
+
+    def add_to_gallery
+      media_scan_intent = Potion::Intent.new(Potion::Intent::ACTION_MEDIA_SCANNER_SCAN_FILE)
+      photo_file = Potion::File(photo_path)
+      content_uri = Potion::Uri.fromFile(photo_file)
+      media_scan_intent.setData(content_uri)
+      find.app.context.sendBroadcast(media_scan_intent)
+    end
+
     private
 
     def create_image_file(extension="jpg")

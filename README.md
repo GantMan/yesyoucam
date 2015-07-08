@@ -13,7 +13,7 @@
   YesYouCam.capture_photo
 ```
 
-### React on Take a Photo Completion
+### On Take a Photo Completion - Get Photo
 ```ruby
   # called in BluePotion when the photo has been taken (or any activity is completed actually)
   # If you're not using a PMActivity you should capture the onActivityResult method.
@@ -22,7 +22,10 @@
     if (request_code == YesYouCam::CAPTURE_IMAGE_RC)
       if (result_code == YesYouCam::OK) # OR Android::App::Activity::RESULT_OK
         # Photo success!
-        p "Photo located at #{YesYouCam.photo_path}"
+        p "Full sized photo located at #{YesYouCam.photo_path}"
+        # I sure could use a thumbnail!
+        thumbnail = YesYouCam.make_thumbnail(data)
+        # now you can do some_image_view.imageBitmap = thumbnail
       else
         # Photo failed or was cancelled
       end
@@ -38,9 +41,11 @@
   YesYouCam.photo_path # Some new PNG path
 ```
 
-### Need the photo discoverable by Photo Libraries?
+### Need the photo discoverable by Photo Libraries and other Apps?
 ```ruby
-# TODO
+  # Run this and the current photo (YesYouCam.photo_path) will be
+  # added to the user's Photo Gallery, and accessible by all apps.
+  YesYouCam.add_to_gallery
 ```
 
 ### Let the user select a photo from their library?

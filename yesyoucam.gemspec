@@ -10,7 +10,6 @@ Gem::Specification.new do |spec|
   spec.summary       = %q{Quickly and easily use the Android camera functions in RubyMotion for Android.}
   spec.homepage      = "https://github.com/GantMan/yesyoucam"
   spec.license       = "MIT"
-  spec.post_install_message = "JUST DO IT!!!! MAKE YOUR DREAMS COME TRUE!"
 
   files = []
   files << 'README.md'

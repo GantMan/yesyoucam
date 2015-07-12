@@ -93,6 +93,7 @@ And then execute:
     $ bundle
 
 Now make sure your `Rakefile` has camera permissions and features needed:
+
     # This gem will try to add permissions, but it's best that you assure they are set!
     app.permissions += [:write_external_storage]
     # This gem will add this feature, but it's safest for you to also set it!

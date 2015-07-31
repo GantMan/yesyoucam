@@ -75,8 +75,13 @@
         app.toast "No Photo"
       end
     elsif request_code == YesYouCam::CHOOSE_IMAGE_RC
-      # photo chosen
+      # the chosen photo
       selected_uri = data.getData
+      # Did you want the path?
+      photo_path = YesYouCam.pic_path_from_uri(selected_uri)
+      # Did you want the BMP data?
+      bmp_data = YesYouCam.bmp_data(photo_path)
+      # Nope, the uri is fine...
       find!(:some_image_view).imageURI = selected_uri
     end
   end

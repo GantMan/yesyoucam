@@ -2,6 +2,7 @@ class YesYouCam
   OK = Android::App::Activity::RESULT_OK
   CAPTURE_IMAGE_RC = 100
   CHOOSE_IMAGE_RC = 101
+  DATA = "_data" # MediaStore.Images.Media.DATA
 
   class << self
 
@@ -51,8 +52,9 @@ class YesYouCam
       @current_photo_path
     end
 
-    def bmp_data
-      Android::Graphics::BitmapFactory.decodeFile(photo_path)
+    def bmp_data(optional_path=nil)
+      file_path = optional_path ? optional_path : photo_path
+      Android::Graphics::BitmapFactory.decodeFile(file_path)
     end
 
     def camera_exists?
@@ -65,6 +67,16 @@ class YesYouCam
       content_uri = Potion::Uri.fromFile(photo_file)
       media_scan_intent.setData(content_uri)
       find.app.context.sendBroadcast(media_scan_intent)
+    end
+
+    def pic_path_from_uri (content_uri)
+      cursor = find.app.context.contentResolver.query(content_uri, nil, nil, nil, nil)
+      column_index = cursor.getColumnIndexOrThrow(YesYouCam::DATA)
+      cursor.moveToFirst
+      path = cursor.getString(column_index)
+      cursor.close
+
+      path
     end
 
     private

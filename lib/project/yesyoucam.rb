@@ -71,9 +71,28 @@ class YesYouCam
 
     def pic_path_from_uri (content_uri)
       cursor = find.app.context.contentResolver.query(content_uri, nil, nil, nil, nil)
-      column_index = cursor.getColumnIndexOrThrow(YesYouCam::DATA)
+      column_index = cursor.getColumnIndex(YesYouCam::DATA)
+      path = nil
       cursor.moveToFirst
-      path = cursor.getString(column_index)
+
+      # Some devices have SD cards/google services that make this a living hell... protect the user!
+      if column_index >= 0
+        path = cursor.getString(column_index)
+      else
+        # We're probably on an SD card - check common places (We're not the first one to attempt this terrible idea... DAMN YOU ANDROID!)
+        external = Potion::Environment.getExternalStorageDirectory.getAbsolutePath
+        dcim = Potion::Environment.getExternalStoragePublicDirectory(Potion::Environment::DIRECTORY_DCIM).getAbsolutePath
+        pictures = Potion::Environment.getExternalStoragePublicDirectory(Potion::Environment::DIRECTORY_PICTURES).getAbsolutePath
+
+        potential_dirs = ["#{dcim}/Camera/", "#{dcim}/100Media/", "#{dcim}/100ANDRO/", "#{dcim}/100LGDSC/", "#{external}/Images/", "#{pictures}/", "#{dcim}"]
+
+        potential_dirs.each do |current_path|
+          potential_file = current_path + cursor.getString(0)
+          path = potential_file if Potion::File.new(potential_file).exists
+          break if path #shortcircuit now that we've found it!
+        end
+      end
+
       cursor.close
 
       path

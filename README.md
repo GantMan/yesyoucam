@@ -1,5 +1,6 @@
 # Yes You Cam
 ## A **Ridiculous**ly Simple BluePotion Camera Library to help you achieve your dreams...
+[![Gem Version](https://badge.fury.io/rb/yesyoucam.svg)](http://badge.fury.io/rb/yesyoucam)
 ![Don't Shia Way](_art/yyc.png)
 
 ## Usage ("Nothing is impossible")
